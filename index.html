@@ -469,10 +469,14 @@
     </div>
 
     <script>
+      // Xử lý tự động lấy tên từ URL (tham số ?to=...)
+      const urlParams = new URLSearchParams(window.location.search);
+      const recipientName = urlParams.get('to');
+
       const CFG = {
         l1: "CHÚC MỪNG 20/10",
         l2: "CÔNG CHÚA",
-        name: "Công Chúa Nhỏ",
+        name: recipientName ? decodeURIComponent(recipientName) : "Công Chúa Nhỏ",
         intro:
           "Nhân ngày 20/10, chúc người đẹp luôn xinh đẹp, rạng rỡ như đóa hồng đầu mùa. Mong mỗi ngày của bạn đều ngập tràn tiếng cười và thật nhiều yêu thương. 🌸",
         wishes: [
@@ -750,5 +754,5 @@
         }
       });
     </script>
-    </body>
+  </body>
 </html>
