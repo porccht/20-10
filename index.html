@@ -1,758 +1,1009 @@
-<!doctype html>
-<html lang="vi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>Code By Thanh Long ❤️‍🩹</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Dancing+Script:wght@600&family=Be+Vietnam+Pro:wght@300;400;600&display=swap&subset=vietnamese"
-      rel="stylesheet"
-    />
+<!DOCTYPE html>
+<html lang="vi" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lời Chúc - Nghĩa Nặng Ơn Thầy Cô | Chi Đoàn 12C4 - THPT Thiệu Hóa</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Be Vietnam Pro & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- PageFlip JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+
     <style>
-      :root {
-        --pink: #ff6fae;
-        --rose: #ff3d84;
-        --gold: #ffd9a8;
-        --text: #fff1f6;
-        --serif: "Playfair Display", "Times New Roman", Georgia, serif;
-        --script: "Dancing Script", "Segoe Script", "Brush Script MT", cursive;
-        --sans: "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif;
-        box-sizing: border-box;
-        padding-top: env(safe-area-inset-top, 0px);
-        padding-bottom: env(safe-area-inset-bottom, 0px);
-      }
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-        overflow: hidden;
-      }
-      body {
-        background: radial-gradient(circle at 50% 30%, #4a1240, #2a0a24 70%);
-        color: var(--text);
-        font-family: var(--sans);
-      }
-      .glow {
-        position: fixed;
-        border-radius: 50%;
-        filter: blur(80px);
-        opacity: 0.35;
-        pointer-events: none;
-      }
-      .g1 {
-        width: 50vmax;
-        height: 50vmax;
-        background: #ff2d8a;
-        left: -15vmax;
-        top: -10vmax;
-      }
-      .g2 {
-        width: 40vmax;
-        height: 40vmax;
-        background: #8a3dff;
-        right: -12vmax;
-        bottom: -10vmax;
-      }
-      .star {
-        position: fixed;
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background: #fff;
-        animation: tw 3s infinite alternate;
-        pointer-events: none;
-      }
-      @keyframes tw {
-        from {
-          opacity: 0.1;
+        * {
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            -webkit-user-select: none;
         }
-        to {
-          opacity: 0.9;
-          box-shadow: 0 0 8px #fff;
+
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            overflow-x: hidden;
         }
-      }
-      #stage {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        transition:
-          opacity 1s,
-          transform 1s;
-        z-index: 2;
-      }
-      #stage.hide {
-        opacity: 0;
-        transform: scale(0.92);
-        pointer-events: none;
-      }
-      .line {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        font-family: var(--serif);
-        font-weight: 900;
-        line-height: 1.15;
-      }
-      .l1 {
-        font-size: clamp(1.9rem, 8.5vw, 4rem);
-        color: #fff;
-      }
-      .l2 {
-        font-size: clamp(2.6rem, 12vw, 5.8rem);
-        color: var(--pink);
-        text-shadow: 0 0 30px var(--rose);
-      }
-      .slot {
-        display: inline-block;
-        opacity: 0;
-        min-width: 0.05em;
-      }
-      .slot.sp {
-        min-width: 0.35em;
-      }
-      .slot.ok {
-        opacity: 1;
-        animation: pop 0.6s;
-      }
-      @keyframes pop {
-        0% {
-          transform: scale(1.6);
-          filter: brightness(2.5);
+
+        .font-handwriting {
+            font-family: 'Dancing Script', cursive;
         }
-        100% {
-          transform: none;
-          filter: none;
+
+        /* LIQUID GLASS UI STYLES */
+        .liquid-glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
         }
-      }
-      .fly {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 3;
-        pointer-events: none;
-        font-family: var(--serif);
-        font-weight: 900;
-        color: #ffb3d4;
-        text-shadow: 0 0 14px var(--rose);
-        will-change: transform;
-        transition: opacity 1s;
-      }
-      #hint {
-        font-family: var(--script);
-        font-size: 1.6rem;
-        color: var(--gold);
-        animation: pulse 1.6s infinite;
-        margin-top: 1rem;
-        text-align: center;
-        padding: 0 1rem;
-      }
-      @keyframes pulse {
-        50% {
-          opacity: 0.5;
-          transform: scale(1.05);
+
+        .liquid-glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-      }
-      #btn,
-      .b2 {
-        padding: 0.85rem 2rem;
-        border: 0;
-        border-radius: 99px;
-        font: 600 1.05rem var(--sans);
-        color: #fff;
-        cursor: pointer;
-        background: linear-gradient(135deg, #ff6fae, #ff3d84);
-        box-shadow: 0 0 28px rgba(255, 61, 132, 0.55);
-        transition: transform 0.2s;
-        z-index: 5;
-      }
-      #btn:hover,
-      .b2:hover {
-        transform: scale(1.07);
-      }
-      .b2.ghost {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: none;
-        border: 1px solid rgba(255, 182, 213, 0.5);
-      }
-      #card {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 1rem;
-        z-index: 4;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 1.2s;
-        overflow-y: auto;
-      }
-      #card.show {
-        opacity: 1;
-        pointer-events: auto;
-      }
-      .box {
-        position: relative;
-        margin: auto;
-        max-width: 420px;
-        width: 100%;
-        text-align: center;
-        padding: 1.5rem 1.1rem 1.1rem;
-        border-radius: 24px;
-        background: linear-gradient(
-          160deg,
-          rgba(255, 255, 255, 0.13),
-          rgba(255, 255, 255, 0.04)
-        );
-        border: 1px solid rgba(255, 182, 213, 0.4);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
-        box-shadow:
-          0 25px 90px rgba(255, 61, 132, 0.35),
-          inset 0 0 40px rgba(255, 150, 200, 0.08);
-        transform: scale(0.85) translateY(30px);
-        transition: transform 1.2s cubic-bezier(0.2, 1.3, 0.3, 1);
-      }
-      #card.show .box {
-        transform: none;
-      }
-      .badge {
-        display: inline-block;
-        padding: 0.25rem 0.8rem;
-        border-radius: 99px;
-        font-size: 0.66rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: #4a1240;
-        font-weight: 600;
-        background: linear-gradient(90deg, #ffd9a8, #ffb3d4);
-        box-shadow: 0 0 20px rgba(255, 217, 168, 0.5);
-      }
-      .big {
-        font-size: 2.1rem;
-        margin: 0.4rem 0 0;
-        animation: beat 1.2s infinite;
-      }
-      @keyframes beat {
-        15% {
-          transform: scale(1.25);
+
+        .liquid-glass-btn {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        30% {
-          transform: scale(1);
+
+        .liquid-glass-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+            background: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 10px 25px rgba(168, 85, 247, 0.25), inset 0 1px 2px rgba(255, 255, 255, 1);
         }
-        45% {
-          transform: scale(1.18);
+
+        .liquid-glass-btn:active {
+            transform: translateY(1px) scale(0.96);
         }
-      }
-      .t1 {
-        font-family: var(--script);
-        font-size: 1.25rem;
-        color: var(--gold);
-        margin: 0;
-      }
-      .t2 {
-        font-family: var(--serif);
-        font-size: clamp(1.7rem, 8vw, 2.4rem);
-        margin: 0 0 0.2rem;
-        background: linear-gradient(
-          90deg,
-          #ff9ec8,
-          #fff,
-          #ffd9a8,
-          #ff6fae,
-          #ff9ec8
-        );
-        background-size: 250% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        animation: sh 5s linear infinite;
-      }
-      @keyframes sh {
-        to {
-          background-position: -250% 0;
+
+        /* FLIPBOOK CONTAINER & PAGE PERFORMANCE OPTIMIZATION */
+        .flipbook-viewport {
+            perspective: 2000px;
         }
-      }
-      .orn {
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
-        justify-content: center;
-        color: var(--pink);
-        margin: 0.4rem 0 1rem;
-      }
-      .orn:before,
-      .orn:after {
-        content: "";
-        height: 1px;
-        width: 22%;
-        background: linear-gradient(90deg, transparent, var(--pink));
-      }
-      .orn:after {
-        transform: scaleX(-1);
-      }
-      #msg {
-        font-weight: 300;
-        font-size: 0.88rem;
-        line-height: 1.7;
-        min-height: 6.4em;
-        margin: 0 0.3rem;
-      }
-      .wishes {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.45rem;
-        margin: 0.8rem 0;
-      }
-      .w {
-        padding: 0.55rem 0.45rem;
-        border-radius: 14px;
-        background: rgba(255, 255, 255, 0.07);
-        border: 1px solid rgba(255, 182, 213, 0.25);
-        opacity: 0;
-        transform: translateY(20px) scale(0.9);
-        transition: all 0.8s cubic-bezier(0.2, 1.4, 0.3, 1);
-      }
-      .w.on {
-        opacity: 1;
-        transform: none;
-      }
-      .w i {
-        font-style: normal;
-        font-size: 1.2rem;
-        display: block;
-      }
-      .w b {
-        display: block;
-        font-family: var(--serif);
-        font-size: 0.82rem;
-        color: #ffc2dc;
-        margin: 0.2rem 0;
-      }
-      .w span {
-        font-size: 0.68rem;
-        font-weight: 300;
-        opacity: 0.85;
-        line-height: 1.5;
-        display: block;
-      }
-      .quote {
-        font-family: var(--script);
-        font-size: 1.1rem;
-        color: var(--gold);
-        line-height: 1.5;
-        opacity: 0;
-        transition: opacity 1.2s;
-      }
-      .sign {
-        font-family: var(--script);
-        font-size: 1.2rem;
-        color: var(--pink);
-        margin: 0.4rem 0 0.3rem;
-        opacity: 0;
-        transition: opacity 1.2s;
-      }
-      .on2 {
-        opacity: 1;
-      }
-      .btns {
-        display: flex;
-        gap: 0.7rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        opacity: 0;
-        transition: opacity 1s;
-      }
-      .heart {
-        position: fixed;
-        bottom: -50px;
-        z-index: 1;
-        pointer-events: none;
-        animation: up linear forwards;
-        filter: drop-shadow(0 0 8px rgba(255, 61, 132, 0.7));
-      }
-      @keyframes up {
-        to {
-          transform: translate(var(--dx), -115vh) rotate(var(--rot));
-          opacity: 0;
+
+        .page {
+            background-color: #ffffff;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            will-change: transform;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            transform-style: preserve-3d;
         }
-      }
-      .burst {
-        position: fixed;
-        z-index: 9;
-        pointer-events: none;
-        animation: bst 0.9s ease-out forwards;
-      }
-      @keyframes bst {
-        to {
-          transform: translate(var(--bx), var(--by)) scale(0.3);
-          opacity: 0;
+
+        .notebook-grid {
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px);
+            background-size: 100% 1.8rem;
         }
-      }
-      * {
-        cursor: none !important;
-      }
-      #cur {
-        position: fixed;
-        left: 0;
-        top: 0;
-        z-index: 99;
-        pointer-events: none;
-        font-size: 26px;
-        color: #ff3d84;
-        text-shadow:
-          0 0 12px #ff3d84,
-          0 0 28px #ff6fae;
-        opacity: 0;
-        transition: opacity 0.3s;
-      }
-      #cur span {
-        display: inline-block;
-        animation: beat 1.2s infinite;
-      }
-      .trail {
-        position: fixed;
-        z-index: 98;
-        pointer-events: none;
-        color: #ff6fae;
-        transform: translate(-50%, -50%);
-        animation: tr 1.1s ease-out forwards;
-        text-shadow: 0 0 8px rgba(255, 61, 132, 0.8);
-      }
-      @keyframes tr {
-        to {
-          transform: translate(calc(-50% + var(--tx)), -90px) scale(0.4);
-          opacity: 0;
+
+        .tri-ribbon {
+            height: 4px;
+            background: linear-gradient(90deg, #ec4899, #a855f7, #06b6d4);
         }
-      }
-      .btns small {
-        font-size: 0.7rem;
-        opacity: 0.65;
-        letter-spacing: 0.06em;
-        font-weight: 300;
-      }
+
+        /* CUSTOM SCROLLBAR FOR CONTENT */
+        .custom-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 10px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: rgba(168, 85, 247, 0.3);
+            border-radius: 10px;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(168, 85, 247, 0.6);
+        }
+
+        /* EQUALIZER ANIMATION FOR AUDIO WIDGET */
+        .eq-bar {
+            width: 3px;
+            height: 12px;
+            background-color: #ec4899;
+            border-radius: 3px;
+            animation: eqBounce 1.2s infinite ease-in-out alternate;
+        }
+        .eq-bar:nth-child(1) { animation-delay: 0.1s; }
+        .eq-bar:nth-child(2) { animation-delay: 0.3s; }
+        .eq-bar:nth-child(3) { animation-delay: 0.5s; }
+
+        @keyframes eqBounce {
+            0% { height: 4px; }
+            100% { height: 16px; }
+        }
+
+        .paused .eq-bar {
+            animation-play-state: paused;
+            height: 4px !important;
+        }
     </style>
-  </head>
-  <body>
-    <div class="glow g1"></div>
-    <div class="glow g2"></div>
+</head>
+<body class="h-full flex flex-col justify-between select-none bg-slate-50 text-slate-800">
 
-    <div id="stage">
-      <div class="line l1" id="l1"></div>
-      <div class="line l2" id="l2"></div>
-      <div id="hint">✦ Có một thông điệp đang bay lạc... ✦</div>
-      <button id="btn">Giải mã 💌</button>
-    </div>
+    <!-- BACKGROUND YOUTUBE CONTAINER (HIDDEN) -->
+    <div id="player" class="hidden"></div>
 
-    <div id="card">
-      <div class="box">
-        <span class="badge">20 · 10 &nbsp;Ngày Phụ nữ Việt Nam</span>
-        <div class="big">💖</div>
-        <p class="t1">Gửi riêng cho</p>
-        <h1 class="t2" id="name"></h1>
-        <div class="orn">❀ ❤ ❀</div>
-        <div id="msg"></div>
-        <div class="wishes" id="wishes"></div>
-        <div class="quote" id="quote"></div>
-        <div class="sign" id="sign"></div>
-        <div class="btns" id="btns">
-          <small>Code By Thanh Long ❤️‍🩹</small>
+    <!-- FLOATING TOP BAR / HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-40 px-4 py-3 flex items-center justify-between pointer-events-none">
+        <!-- Logo & Title -->
+        <div class="pointer-events-auto liquid-glass px-4 py-2 rounded-2xl flex items-center space-x-3 shadow-sm border border-white/80">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-pink-500 via-purple-600 to-cyan-500 flex items-center justify-center text-white font-bold text-sm shadow-md">
+                12C4
+            </div>
+            <div>
+                <h1 class="text-xs font-bold text-slate-800 leading-tight">THPT Thiệu Hóa</h1>
+                <p class="text-[10px] text-purple-700 font-semibold">Tri Ân Thầy Cô 20/11</p>
+            </div>
         </div>
-      </div>
+
+        <!-- Right Control Panel: Music, Sound FX, TOC, Fullscreen -->
+        <div class="pointer-events-auto flex items-center space-x-2">
+            <!-- Music Control Button -->
+            <button id="music-toggle-btn" class="liquid-glass-btn px-3 py-2 rounded-2xl flex items-center space-x-2 text-xs font-bold text-slate-700">
+                <div id="eq-widget" class="flex items-end space-x-0.5 h-4 paused">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+                <i id="music-icon" class="fa-solid fa-volume-xmark text-slate-400 text-sm"></i>
+                <span id="music-text" class="hidden sm:inline">Nhạc Nền</span>
+            </button>
+
+            <!-- Page Sound FX Toggle -->
+            <button id="sfx-toggle-btn" title="Âm thanh lật trang" class="liquid-glass-btn w-9 h-9 rounded-2xl flex items-center justify-center text-purple-700 text-sm">
+                <i id="sfx-icon" class="fa-solid fa-book-open"></i>
+            </button>
+
+            <!-- Table of Contents Toggle -->
+            <button onclick="toggleTocModal()" class="liquid-glass-btn w-9 h-9 rounded-2xl flex items-center justify-center text-purple-700 text-sm">
+                <i class="fa-solid fa-list-ul"></i>
+            </button>
+
+            <!-- Fullscreen Button -->
+            <button onclick="toggleFullScreen()" class="liquid-glass-btn w-9 h-9 rounded-2xl flex items-center justify-center text-slate-700 text-sm hidden sm:flex">
+                <i class="fa-solid fa-expand"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- AUTOPLAY WAIT TOAST NOTIFICATION -->
+    <div id="autoplay-toast" class="fixed top-16 left-1/2 transform -translate-x-1/2 z-50 liquid-glass px-4 py-2.5 rounded-full border border-pink-300 shadow-xl flex items-center space-x-3 transition-all duration-500 opacity-0 pointer-events-none">
+        <span class="w-2.5 h-2.5 rounded-full bg-pink-500 animate-ping"></span>
+        <span class="text-xs font-bold text-purple-900">Chạm bất kỳ đâu trên màn hình để bật nhạc nền 🎵</span>
     </div>
 
+    <!-- MAIN FLIPBOOK DISPLAY CONTAINER -->
+    <main class="flex-1 flex flex-col items-center justify-center pt-16 pb-12 px-2 sm:px-4 relative overflow-hidden">
+        
+        <div class="flipbook-viewport w-full max-w-5xl flex flex-col items-center justify-center">
+            
+            <!-- FLIPBOOK STACK -->
+            <div id="flipbook" class="opacity-0 transition-opacity duration-700 shadow-2xl rounded-2xl">
+                
+                <!-- ========================================== -->
+                <!-- PAGE 1: TRANG BÌA CHÍNH (COVER) -->
+                <!-- ========================================== -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between border-4 border-purple-200/50 relative overflow-hidden">
+                    <div class="absolute -right-12 -top-12 w-40 h-40 bg-pink-300/30 rounded-full blur-2xl"></div>
+                    <div class="absolute -left-12 -bottom-12 w-40 h-40 bg-cyan-300/30 rounded-full blur-2xl"></div>
+
+                    <!-- Header Badges -->
+                    <div class="flex items-center justify-between border-b pb-3 z-10">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-graduation-cap text-purple-600 text-xl"></i>
+                            <span class="text-xs font-bold text-purple-900 tracking-wider uppercase">ĐOÀN TRƯỜNG THPT THIỆU HÓA</span>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full bg-pink-100 text-pink-700 text-[10px] font-bold">20/11/2026</span>
+                    </div>
+
+                    <!-- Center Title Box -->
+                    <div class="my-auto text-center space-y-4 py-6 z-10">
+                        <div class="inline-block p-2 rounded-3xl liquid-glass border border-white/90 shadow-md mb-2">
+                            <span class="px-3 py-1 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-xs uppercase tracking-wide">
+                                TẬP SAN TRI ÂN 20/11
+                            </span>
+                        </div>
+
+                        <h1 class="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-900 via-pink-700 to-cyan-800 leading-tight">
+                            LỜI CHÚC - NGHĨA NẶNG ƠN THẦY CÔ!
+                        </h1>
+
+                        <p class="text-xs text-slate-600 italic max-w-xs mx-auto">
+                            "Uống nước nhớ nguồn - Tôn sư trọng đạo"
+                        </p>
+
+                        <!-- Decorative School Graphic Element -->
+                        <div class="pt-4 flex justify-center space-x-4 text-purple-400">
+                            <i class="fa-solid fa-book-open-reader text-2xl animate-bounce"></i>
+                            <i class="fa-solid fa-heart text-pink-500 text-xl"></i>
+                            <i class="fa-solid fa-pen-nib text-cyan-500 text-xl"></i>
+                        </div>
+                    </div>
+
+                    <!-- Footer Info Cover -->
+                    <div class="border-t pt-3 flex items-center justify-between text-xs font-medium text-slate-700 z-10">
+                        <div class="flex items-center space-x-1.5">
+                            <i class="fa-solid fa-users text-purple-600"></i>
+                            <span>Chi đoàn: <strong class="text-purple-800 font-bold">12C4</strong></span>
+                        </div>
+                        <div class="text-[10px] text-slate-500">
+                            Biên tập: <strong class="text-pink-600">Thanh Long ❤️‍🩹</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- PAGE 2: LỜI NGỎ TRI ÂN -->
+                <!-- ========================================== -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-purple-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-feather-pointed text-pink-500 mr-2"></i>Lời Ngỏ</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 02</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 text-xs leading-relaxed text-slate-700 custom-scroll overflow-y-auto max-h-[420px] pr-2">
+                        <p class="font-bold text-purple-800 italic">Kính gửi Quý Thầy Cô giáo cùng toàn thể các bạn học sinh!</p>
+                        <p>
+                            Tháng 11 về mang theo cái se lạnh của mùa thu muộn, nhưng lại làm ấm lòng biết bao thế hệ học trò bởi ngày lễ hiến chương cao quý - **Ngày Nhà giáo Việt Nam 20/11**.
+                        </p>
+                        <p>
+                            Dưới mái trường **THPT Thiệu Hóa** thân yêu, từng hàng cây, lớp học đều in đậm công ơn dạy dỗ ân cần, lặng thầm của thầy cô. Tập san *"Lời Chúc - Nghĩa Nặng Ơn Thầy Cô!"* của tập thể **Chi đoàn 12C4** ra đời như một món quà tinh thần gửi trọn tình cảm tri ân sâu sắc nhất.
+                        </p>
+                        <p class="italic text-slate-500 pt-2 text-right">
+                            — Tập thể Chi đoàn 12C4
+                        </p>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Chào Mừng Ngày Nhà Giáo Việt Nam 20/11/2026
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- PAGE 3: THƠ VÀ TẢN VĂN TRI ÂN -->
+                <!-- ========================================== -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-pink-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-pen-fancy text-purple-500 mr-2"></i>Thơ & Tản Văn</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 03</span>
+                    </h2>
+
+                    <div class="my-auto space-y-4 text-xs custom-scroll overflow-y-auto max-h-[420px] pr-2">
+                        <div class="p-3.5 rounded-2xl bg-pink-50/80 border border-pink-200">
+                            <h3 class="font-bold text-pink-800 text-sm mb-1">Người Lái Đò Bến THPT Thiệu Hóa</h3>
+                            <p class="font-handwriting text-base text-slate-800 leading-snug">
+                                "Tháng năm dầu dãi mưa tần tảo,<br>
+                                Chở nặng tình thương chuyến đò đầy.<br>
+                                Bụi phấn rơi rơi trên mái tóc,<br>
+                                Dìu dắt chúng em thành người nay."
+                            </p>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-purple-50/80 border border-purple-200">
+                            <h3 class="font-bold text-purple-800 text-sm mb-1">Ký Ức Tuổi Học Trò 12C4</h3>
+                            <p class="text-slate-600 leading-relaxed italic">
+                                "Năm tháng trôi qua dưới mái trường Thiệu Hóa sẽ luôn là khoảng thời gian đẹp nhất. Cảm ơn thầy cô đã luôn kiên nhẫn, soi sáng con đường tri thức cho tập thể 12C4."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Tác phẩm tự sáng tác - Chi đoàn 12C4
+                    </div>
+                </div>
+
+                <!-- ========================================== -->
+                <!-- PAGE 4: PHỎNG VẤN THẦY CÔ & TRUYỀN CẢM HƯỚNG -->
+                <!-- ========================================== -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-cyan-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-comments text-cyan-500 mr-2"></i>Phỏng Vấn Thầy Cô</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 04</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-xs">
+                        <div class="p-3 rounded-2xl bg-cyan-50/80 border border-cyan-200 space-y-1">
+                            <div class="font-bold text-cyan-800 flex items-center">
+                                <i class="fa-solid fa-circle-question mr-1.5 text-cyan-600"></i>12C4 Hỏi:
+                            </div>
+                            <p class="text-slate-600 italic">"Điều thầy cô mong muốn nhất ở học sinh cuối cấp 12C4 là gì?"</p>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-purple-50/80 border border-purple-200 space-y-1">
+                            <div class="font-bold text-purple-800 flex items-center">
+                                <i class="fa-solid fa-chalkboard-user mr-1.5 text-purple-600"></i>Thầy Cô Trả Lời:
+                            </div>
+                            <p class="text-slate-700 leading-relaxed">
+                                "Thầy cô chỉ mong các em luôn vững tin, tự giác học tập và sống có trách nhiệm. Hãy biến tri thức thành sức mạnh để chinh phục các kỳ thi sắp tới!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Trích cuộc trò chuyện với Thầy Cô THPT Thiệu Hóa
+                    </div>
+                </div>
+
+                <!-- PAGE 5 TO PAGE 12 INCLUDED (FROM CURRENT CODE BASE) -->
+                <!-- PAGE 5: GÓC ẢNH KỶ NIỆM 12C4 -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-purple-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-camera-retro text-pink-500 mr-2"></i>Góc Ảnh Kỷ Niệm</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 05</span>
+                    </h2>
+
+                    <div class="my-auto grid grid-cols-2 gap-2.5 custom-scroll overflow-y-auto max-h-[420px]">
+                        <div class="liquid-glass-card p-2 rounded-2xl text-center group cursor-pointer" onclick="openPhotoModal('https://placehold.co/600x400/a855f7/ffffff?text=Tap+The+12C4', 'Tập thể Chi đoàn 12C4 rạng rỡ ngày khai giảng')">
+                            <div class="overflow-hidden rounded-xl mb-1.5 h-24 sm:h-28 bg-slate-100 relative">
+                                <img src="https://placehold.co/600x400/a855f7/ffffff?text=Tap+The+12C4" alt="Chi đoàn 12C4" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <span class="text-[11px] font-bold text-purple-800 block truncate">Khai Giảng Rực Rỡ</span>
+                        </div>
+
+                        <div class="liquid-glass-card p-2 rounded-2xl text-center group cursor-pointer" onclick="openPhotoModal('https://placehold.co/600x400/06b6d4/ffffff?text=Gio+Hoc+Chuyen+De', 'Nụ cười thầy cô trong giờ học chuyên đề')">
+                            <div class="overflow-hidden rounded-xl mb-1.5 h-24 sm:h-28 bg-slate-100">
+                                <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Gio+Hoc+Chuyen+De" alt="Giờ học" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <span class="text-[11px] font-bold text-cyan-800 block truncate">Giờ Học Hăng Say</span>
+                        </div>
+
+                        <div class="liquid-glass-card p-2 rounded-2xl text-center group cursor-pointer" onclick="openPhotoModal('https://placehold.co/600x400/ec4899/ffffff?text=Hoat+Dong+Ngoai+Khoa', 'Hoạt động ngoại khóa Đoàn trường THPT Thiệu Hóa')">
+                            <div class="overflow-hidden rounded-xl mb-1.5 h-24 sm:h-28 bg-slate-100">
+                                <img src="https://placehold.co/600x400/ec4899/ffffff?text=Hoat+Dong+Ngoai+Khoa" alt="Ngoại khóa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <span class="text-[11px] font-bold text-pink-800 block truncate">Ngoại Khóa Sôi Nổi</span>
+                        </div>
+
+                        <div class="liquid-glass-card p-2 rounded-2xl text-center group cursor-pointer" onclick="openPhotoModal('https://placehold.co/600x400/f59e0b/ffffff?text=Sinh+Nhat+Lop', 'Kỷ niệm sinh nhật thành viên 12C4')">
+                            <div class="overflow-hidden rounded-xl mb-1.5 h-24 sm:h-28 bg-slate-100">
+                                <img src="https://placehold.co/600x400/f59e0b/ffffff?text=Sinh+Nhat+Lop" alt="Sinh nhật" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <span class="text-[11px] font-bold text-amber-800 block truncate">Gắn Kết Chi Đoàn</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Nhấn vào hình để phóng to xem chi tiết
+                    </div>
+                </div>
+
+                <!-- PAGE 6: CHÙM THƠ VÈ VUI MÔN HỌC -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-amber-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-face-smile-beam text-amber-500 mr-2"></i>Thơ Vè Môn Học</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 06</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-xs">
+                        <div class="p-3 rounded-2xl bg-amber-50/80 border border-amber-200">
+                            <div class="font-bold text-amber-800 mb-1 flex items-center">
+                                <i class="fa-solid fa-calculator mr-1.5"></i>Vè Môn Toán
+                            </div>
+                            <p class="italic text-slate-700 leading-relaxed">
+                                "Hình không gian nhức cả đầu,<br>
+                                Tích phân đạo hàm tính bấy lâu.<br>
+                                Thầy giảng một hồi ra ánh sáng,<br>
+                                Điểm 10 cập bến sướng vui sao!"
+                            </p>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-blue-50/80 border border-blue-200">
+                            <div class="font-bold text-blue-800 mb-1 flex items-center">
+                                <i class="fa-solid fa-flask mr-1.5"></i>Vè Môn Hóa
+                            </div>
+                            <p class="italic text-slate-700 leading-relaxed">
+                                "Axit, Bazơ rồi Polime,<br>
+                                Thí nghiệm đổi màu thích mê mê.<br>
+                                Cô bảo phương trình cần cân bằng,<br>
+                                Cuộc sống cũng thế hỡi cạ cứng!"
+                            </p>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-teal-50/80 border border-teal-200">
+                            <div class="font-bold text-teal-800 mb-1 flex items-center">
+                                <i class="fa-solid fa-laptop-code mr-1.5"></i>Vè Môn Tin Học
+                            </div>
+                            <p class="italic text-slate-700 leading-relaxed">
+                                "Code từng dòng lệnh chạy êm ru,<br>
+                                Lập trình website tập san cùng cô.<br>
+                                Chuyển đổi số Đoàn lớp dẫn đầu,<br>
+                                12C4 mãi đỉnh lâu!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Góc Hài Hước Tuổi Học Trò 12C4
+                    </div>
+                </div>
+
+                <!-- PAGE 7: NHẬT KÝ HỌC ĐƯỜNG -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-teal-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-book text-teal-600 mr-2"></i>Nhật Ký Thiệu Hóa</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 07</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-xs leading-relaxed text-slate-700">
+                        <div class="p-3 rounded-2xl bg-white/80 border border-teal-200 shadow-sm space-y-1">
+                            <div class="font-bold text-teal-800 text-xs flex justify-between">
+                                <span><i class="fa-solid fa-calendar-day mr-1"></i>Trích nhật ký mùa thu...</span>
+                                <span class="text-[10px] text-slate-400">12C4 THPT Thiệu Hóa</span>
+                            </div>
+                            <p class="text-slate-600">
+                                Những ngày tháng 11 tiết trời se lạnh, tiếng trống trường vang lên từng hồi rộn rã. Lớp 12C4 chúng mình lại cùng nhau lên kế hoạch vẽ tranh, tập văn nghệ và làm tập san tri ân.
+                            </p>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-purple-50/70 border border-purple-200 space-y-1">
+                            <div class="font-bold text-purple-800 text-xs">
+                                <i class="fa-solid fa-heart mr-1"></i>Kỷ niệm dưới hàng cây xanh:
+                            </div>
+                            <p class="text-slate-600">
+                                Mỗi góc sân trường THPT Thiệu Hóa đều in dấu những buổi học nhóm hăng say, những cái nắm tay tiếp thêm động lực cho chặng đường chinh phục ước mơ phía trước.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Mái Trường THPT Thiệu Hóa Thân Yêu
+                    </div>
+                </div>
+
+                <!-- PAGE 8: LỜI CHÚC TỪ CHI ĐOÀN 12C4 -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-pink-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-envelope-open-text text-pink-500 mr-2"></i>Lời Chúc 20/11</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 08</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-center">
+                        <div class="p-4 rounded-3xl liquid-glass border border-pink-300 space-y-3 shadow-md">
+                            <div class="w-12 h-12 mx-auto rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold text-xl">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+                            <h3 class="font-bold text-sm text-pink-800 uppercase">Tập Thể Chi Đoàn 12C4 Kính Chúc</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed italic">
+                                "Kính chúc Toàn thể BGH, quý Thầy Cô giáo trường THPT Thiệu Hóa luôn dồi dào sức khỏe, tràn đầy niềm vui, gặt hái được nhiều thành công hơn nữa trong sự nghiệp cao quý!"
+                            </p>
+
+                            <div class="pt-2">
+                                <button onclick="openQrModal()" class="px-4 py-2 rounded-2xl bg-gradient-to-r from-pink-500 to-purple-600 text-white text-xs font-bold shadow-md hover:opacity-95 transition-all flex items-center justify-center mx-auto space-x-2">
+                                    <i class="fa-solid fa-qrcode text-sm"></i>
+                                    <span>Quét Mã QR Lời Chúc Video</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Ấn phẩm tri ân 20/11 - Chi đoàn 12C4
+                    </div>
+                </div>
+
+                <!-- PAGE 9: GÓC SÁNG TẠO ĐOÀN VIÊN -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-purple-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-palette text-purple-600 mr-2"></i>Góc Sáng Tạo</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 09</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-xs">
+                        <div class="p-3.5 rounded-2xl liquid-glass-card border border-purple-200">
+                            <div class="font-bold text-purple-800 mb-1 flex items-center">
+                                <i class="fa-solid fa-wand-magic-sparkles mr-1.5 text-pink-500"></i>Tranh Vẽ Kỹ Thuật Số
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                Tác phẩm thiết kế mang phong cách Liquid Glass kết hợp chuyển đổi số ứng dụng trong sinh hoạt Đoàn, thể hiện tư duy đa phương tiện năng động của Đoàn viên 12C4.
+                            </p>
+                        </div>
+
+                        <div class="p-3.5 rounded-2xl bg-cyan-50/80 border border-cyan-200">
+                            <div class="font-bold text-cyan-800 mb-1 flex items-center">
+                                <i class="fa-solid fa-microchip mr-1.5"></i>Chuyển Đổi Số Trong Học Đường
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                Ứng dụng công nghệ Flipbook tương tác giúp nâng cao trực quan, giảm chi phí in ấn và hưởng ứng phong trào Tuổi trẻ sáng tạo Đoàn THPT Thiệu Hóa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Sáng Tạo Tuổi Trẻ 12C4
+                    </div>
+                </div>
+
+                <!-- PAGE 10: TẤM GƯƠNG TRUYỀN CẢM HƯỚNG -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-blue-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-star text-yellow-500 mr-2"></i>Gương Truyền Cảm Hứng</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 10</span>
+                    </h2>
+
+                    <div class="my-auto space-y-3 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-xs">
+                        <div class="p-3.5 rounded-2xl liquid-glass-card border border-blue-200">
+                            <div class="flex items-center space-x-2 mb-1.5">
+                                <div class="w-7 h-7 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold text-xs">
+                                    CH
+                                </div>
+                                <span class="font-bold text-slate-800 text-xs">Cựu Học Sinh THPT Thiệu Hóa</span>
+                            </div>
+                            <p class="text-slate-600 italic leading-relaxed">
+                                "Những tháng ngày được rèn luyện dưới mái trường Thiệu Hóa chính là nền tảng vững chắc nhất giúp chúng em tự tin vững bước vào ngưỡng cửa Đại học."
+                            </p>
+                        </div>
+
+                        <div class="p-3 rounded-2xl bg-amber-50/80 border border-amber-200">
+                            <div class="font-bold text-amber-800 mb-1">
+                                <i class="fa-solid fa-compass mr-1"></i>Lời nhắn gửi lớp đàn em 12C4:
+                            </div>
+                            <p class="text-slate-600 leading-relaxed">
+                                Hãy luôn trân trọng từng khoảnh khắc bên thầy cô và bạn bè, vì đó sẽ là những ký ức đẹp nhất của thời thanh xuân!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Tiếp Nối Truyền Thống Hiếu Học
+                    </div>
+                </div>
+
+                <!-- PAGE 11: BẢNG VÀNG THÀNH TÍCH 12C4 -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between">
+                    <div class="tri-ribbon mb-4 rounded-full"></div>
+                    <h2 class="text-xl font-bold text-purple-900 border-b pb-2 flex items-center justify-between">
+                        <span><i class="fa-solid fa-trophy text-yellow-500 mr-2"></i>Bảng Vàng Thành Tích</span>
+                        <span class="text-xs font-normal text-slate-400">Trang 11</span>
+                    </h2>
+
+                    <div class="my-auto space-y-2.5 custom-scroll overflow-y-auto max-h-[420px] pr-2 text-xs">
+                        <div class="p-2.5 rounded-2xl bg-white/80 border border-purple-200 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-medal text-yellow-500 text-base"></i>
+                                <span class="font-semibold text-slate-800">Thi Đua Tuần Đoàn Trường</span>
+                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-purple-100 text-purple-700 font-bold text-[10px]">Xếp Hạng Tốt</span>
+                        </div>
+
+                        <div class="p-2.5 rounded-2xl bg-white/80 border border-purple-200 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-award text-pink-500 text-base"></i>
+                                <span class="font-semibold text-slate-800">Phong Trào Văn Thể Mỹ</span>
+                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-pink-100 text-pink-700 font-bold text-[10px]">Tích Cực</span>
+                        </div>
+
+                        <div class="p-2.5 rounded-2xl bg-white/80 border border-purple-200 flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-laptop text-cyan-500 text-base"></i>
+                                <span class="font-semibold text-slate-800">Chuyển Đổi Số Tạp Chí Số</span>
+                            </div>
+                            <span class="px-2 py-0.5 rounded-full bg-cyan-100 text-cyan-700 font-bold text-[10px]">Sáng Tạo</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center text-[10px] text-slate-400 pt-2 border-t">
+                        Tự Hào Tập Thể Chi Đoàn 12C4
+                    </div>
+                </div>
+
+                <!-- PAGE 12: TRANG BÌA CUỐI (BACK COVER) -->
+                <div class="page notebook-grid p-6 sm:p-8 flex flex-col justify-between border-l border-slate-200 text-center">
+                    <div class="pt-4">
+                        <h2 class="text-2xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent mb-1">
+                            LỜI CẢM ƠN
+                        </h2>
+                        <p class="text-xs text-slate-500 font-medium">Chi Đoàn 12C4 • THPT Thiệu Hóa</p>
+                    </div>
+
+                    <div class="my-auto py-5 px-4 rounded-3xl liquid-glass border border-white/90 space-y-3 shadow-lg">
+                        <p class="text-xs text-slate-700 leading-relaxed italic">
+                            Chân thành cảm ơn Ban Giám Hiệu, Đoàn Trường THPT Thiệu Hóa cùng Quý Thầy Cô và các bạn học sinh đã ủng hộ ấn phẩm tập san lật trang điện tử của Chi đoàn 12C4!
+                        </p>
+
+                        <div class="w-16 h-0.5 bg-purple-300 mx-auto rounded-full"></div>
+
+                        <div class="text-left bg-white/70 p-3 rounded-2xl border border-purple-100 text-xs space-y-1.5">
+                            <div class="font-bold text-purple-900 border-b pb-1 flex items-center">
+                                <i class="fa-solid fa-users-gear mr-1.5 text-purple-600"></i>BAN BIÊN TẬP HỌC SINH
+                            </div>
+                            <div class="text-slate-700">
+                                <span class="font-semibold text-pink-700">Trưởng Ban Biên Tập:</span><br>
+                                <div class="inline-flex items-center space-x-1.5 font-bold text-slate-800 text-sm mt-0.5">
+                                    <i class="fa-solid fa-user-check text-green-500"></i>
+                                    <span>Hoàng Thanh Long</span>
+                                </div>
+                            </div>
+                            <div class="text-[11px] text-slate-500 pt-0.5">
+                                <strong>Tập thể phối hợp:</strong> Chi đoàn 12C4 THPT Thiệu Hóa
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pb-2 space-y-2">
+                        <div class="flex justify-center space-x-3 text-slate-600 text-sm">
+                            <a href="https://facebook.com/htl165" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-pink-600 transition-colors cursor-pointer"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://tiktok.com/@tlongmmo" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center hover:text-purple-600 transition-colors cursor-pointer"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                        <div class="text-[10px] text-slate-400">
+                            © 2026 Chi đoàn 12C4 - THPT Thiệu Hóa. All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PAGE CONTROLS BAR -->
+        <div class="mt-4 w-full max-w-md liquid-glass px-4 py-2.5 rounded-full flex items-center justify-between border border-white/80 shadow-lg z-30">
+            <button onclick="prevPage()" class="w-9 h-9 rounded-full bg-white/80 hover:bg-pink-50 text-slate-700 hover:text-pink-600 flex items-center justify-center shadow-sm transition-all border border-pink-100">
+                <i class="fa-solid fa-chevron-left text-sm"></i>
+            </button>
+
+            <div class="text-xs font-bold text-slate-700 flex items-center space-x-1">
+                <span>Trang</span>
+                <span id="current-page-num" class="px-2 py-0.5 rounded-md bg-purple-100 text-purple-700">1</span>
+                <span>/</span>
+                <span id="total-page-num" class="text-slate-500">12</span>
+            </div>
+
+            <button onclick="nextPage()" class="w-9 h-9 rounded-full bg-white/80 hover:bg-pink-50 text-slate-700 hover:text-pink-600 flex items-center justify-center shadow-sm transition-all border border-pink-100">
+                <i class="fa-solid fa-chevron-right text-sm"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- FOOTER CITATION -->
+    <footer class="py-2 text-center text-[11px] text-slate-500 liquid-glass border-t border-white/60 z-30">
+        Chi đoàn 12C4 • Trường THPT Thiệu Hóa • Thiết kế bởi <strong class="text-purple-700">Hoàng Thanh Long ❤️‍🩹</strong>
+    </footer>
+
+    <!-- MODAL: TABLE OF CONTENTS (MỤC LỤC) -->
+    <div id="toc-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white/90 backdrop-blur-md rounded-3xl p-5 max-w-md w-full shadow-2xl border border-white/80 space-y-4">
+            <div class="flex items-center justify-between border-b pb-2">
+                <h3 class="font-bold text-base text-slate-800 flex items-center">
+                    <i class="fa-solid fa-list-ul mr-2 text-purple-600"></i>Mục Lục Tập San
+                </h3>
+                <button onclick="toggleTocModal()" class="w-7 h-7 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
+                    <i class="fa-solid fa-xmark text-xs"></i>
+                </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 text-xs max-h-72 overflow-y-auto custom-scroll pr-1">
+                <button onclick="jumpToPage(0)" class="p-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-left font-medium text-pink-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-pink-200 text-pink-800 flex items-center justify-center text-[10px] font-bold">1</span>
+                    <span class="truncate">Trang Bìa Chính</span>
+                </button>
+                <button onclick="jumpToPage(1)" class="p-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-left font-medium text-purple-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-purple-200 text-purple-800 flex items-center justify-center text-[10px] font-bold">2</span>
+                    <span class="truncate">Lời Ngỏ Tri Ân</span>
+                </button>
+                <button onclick="jumpToPage(2)" class="p-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-left font-medium text-purple-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-purple-200 text-purple-800 flex items-center justify-center text-[10px] font-bold">3</span>
+                    <span class="truncate">Thơ & Tản Văn</span>
+                </button>
+                <button onclick="jumpToPage(3)" class="p-2 rounded-xl bg-cyan-50 hover:bg-cyan-100 text-left font-medium text-cyan-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-cyan-200 text-cyan-800 flex items-center justify-center text-[10px] font-bold">4</span>
+                    <span class="truncate">Phỏng Vấn Thầy Cô</span>
+                </button>
+                <button onclick="jumpToPage(4)" class="p-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-left font-medium text-pink-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-pink-200 text-pink-800 flex items-center justify-center text-[10px] font-bold">5</span>
+                    <span class="truncate">Góc Ảnh Kỷ Niệm</span>
+                </button>
+                <button onclick="jumpToPage(5)" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-left font-medium text-amber-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-amber-200 text-amber-800 flex items-center justify-center text-[10px] font-bold">6</span>
+                    <span class="truncate">Vè Vui Môn Học</span>
+                </button>
+                <button onclick="jumpToPage(6)" class="p-2 rounded-xl bg-teal-50 hover:bg-teal-100 text-left font-medium text-teal-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-teal-200 text-teal-800 flex items-center justify-center text-[10px] font-bold">7</span>
+                    <span class="truncate">Nhật Ký Thiệu Hóa</span>
+                </button>
+                <button onclick="jumpToPage(7)" class="p-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-left font-medium text-pink-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-pink-200 text-pink-800 flex items-center justify-center text-[10px] font-bold">8</span>
+                    <span class="truncate">Lời Chúc 20/11</span>
+                </button>
+                <button onclick="jumpToPage(8)" class="p-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-left font-medium text-purple-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-purple-200 text-purple-800 flex items-center justify-center text-[10px] font-bold">9</span>
+                    <span class="truncate">Góc Sáng Tạo</span>
+                </button>
+                <button onclick="jumpToPage(9)" class="p-2 rounded-xl bg-blue-50 hover:bg-blue-100 text-left font-medium text-blue-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-blue-200 text-blue-800 flex items-center justify-center text-[10px] font-bold">10</span>
+                    <span class="truncate">Gương Truyền Cảm Hứng</span>
+                </button>
+                <button onclick="jumpToPage(10)" class="p-2 rounded-xl bg-purple-50 hover:bg-purple-100 text-left font-medium text-purple-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-purple-200 text-purple-800 flex items-center justify-center text-[10px] font-bold">11</span>
+                    <span class="truncate">Bảng Vàng Thành Tích</span>
+                </button>
+                <button onclick="jumpToPage(11)" class="p-2 rounded-xl bg-pink-50 hover:bg-pink-100 text-left font-medium text-pink-900 flex items-center space-x-2">
+                    <span class="w-5 h-5 rounded-full bg-pink-200 text-pink-800 flex items-center justify-center text-[10px] font-bold">12</span>
+                    <span class="truncate">Trang Bìa Cuối</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: QR CODE WIDGET -->
+    <div id="qr-modal" class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white/95 backdrop-blur-md rounded-3xl p-6 max-w-xs w-full shadow-2xl border border-white/80 text-center space-y-4">
+            <h3 class="font-bold text-base text-purple-900">Mã QR Lời Chúc Chi Đoàn 12C4</h3>
+            <div class="p-3 bg-white rounded-2xl shadow-inner border inline-block border-slate-100">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://youtu.be/ciYlljR7BEM" alt="QR Lời chúc" class="w-44 h-44 mx-auto">
+            </div>
+            <p class="text-xs text-slate-600">Quét mã bằng camera điện thoại để mở Video Lời Chúc Tri Ân Thầy Cô</p>
+            <button onclick="closeQrModal()" class="w-full py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all">
+                Đóng
+            </button>
+        </div>
+    </div>
+
+    <!-- MODAL: PHOTO LIGHTBOX -->
+    <div id="photo-modal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white/90 rounded-3xl p-4 max-w-lg w-full shadow-2xl border border-white/80 space-y-3 relative text-center">
+            <button onclick="closePhotoModal()" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modal-img" src="" alt="Enlarged Photo" class="w-full max-h-[70vh] object-contain rounded-2xl shadow-md">
+            <p id="modal-caption" class="text-xs font-semibold text-slate-700 italic"></p>
+        </div>
+    </div>
+
+    <!-- LOGIC SCRIPTS (FLIPBOOK, YOUTUBE API, AUDIO FX, TOUCH SYSTEM) -->
     <script>
-      // Xử lý tự động lấy tên từ URL (tham số ?to=...)
-      const urlParams = new URLSearchParams(window.location.search);
-      const recipientName = urlParams.get('to');
+        let pageFlip = null;
+        let player = null;
+        let isMusicPlaying = false;
+        let isSfxEnabled = true;
+        let audioCtx = null;
 
-      const CFG = {
-        l1: "CHÚC MỪNG 20/10",
-        l2: "CÔNG CHÚA",
-        name: recipientName ? decodeURIComponent(recipientName) : "Công Chúa Nhỏ",
-        intro:
-          "Nhân ngày 20/10, chúc người đẹp luôn xinh đẹp, rạng rỡ như đóa hồng đầu mùa. Mong mỗi ngày của bạn đều ngập tràn tiếng cười và thật nhiều yêu thương. 🌸",
-        wishes: [
-          ["🌸", "Luôn xinh đẹp", "Rạng rỡ từ nụ cười đến trái tim."],
-          ["💖", "Thật hạnh phúc", "Mỗi ngày đều có một niềm vui nhỏ."],
-          ["✨", "Bình yên", "Nhẹ nhàng giữa mọi bộn bề."],
-          ["🌹", "Được yêu thương", "Nhiều hơn bạn có thể đếm hết."],
-        ],
-        quote:
-          "Thanh Long❤️‍🩹 Cảm ơn bạn vì đã xuất hiện và mang đến những điều tích cực, giúp cuộc sống trở nên vui vẻ và ý nghĩa hơn một chút. ",
-        sign: "Hôm Nay Bạn Là Công Chúa Nhỏ",
-      };
-      const POOL = "ABCDEFGHIKLMNOPQRSTUVXYĂÂÊÔƠƯ0123456789";
-      const rnd = (a) =>
-        Array.isArray(a) || typeof a === "string"
-          ? a[Math.floor(Math.random() * a.length)]
-          : 0;
-      const R = (a, b) => Math.random() * (b - a) + a;
-      const $ = (id) => document.getElementById(id);
+        // Load Youtube IFrame API
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      for (let i = 0; i < 60; i++) {
-        const s = document.createElement("div");
-        s.className = "star";
-        s.style.cssText = `left:${R(0, 100)}vw;top:${R(0, 100)}vh;animation-delay:${R(0, 3)}s`;
-        document.body.appendChild(s);
-      }
-
-      $("name").textContent = CFG.name;
-      $("sign").textContent = CFG.sign;
-      $("quote").textContent = CFG.quote;
-      $("wishes").innerHTML = CFG.wishes
-        .map(
-          (w) =>
-            `<div class="w"><i>${w[0]}</i><b>${w[1]}</b><span>${w[2]}</span></div>`,
-        )
-        .join("");
-
-      const flyers = [];
-      let W = innerWidth,
-        H = innerHeight,
-        decoding = false,
-        landed = 0,
-        total = 0;
-      function build(el, text, cls) {
-        [...text].forEach((c) => {
-          const s = document.createElement("span");
-          s.className = "slot" + (c === " " ? " sp" : "");
-          s.textContent = c === " " ? "\u00a0" : c;
-          el.appendChild(s);
-          if (c !== " ") flyers.push({ slot: s, c, cls, real: true });
-        });
-      }
-      build($("l1"), CFG.l1, "l1");
-      build($("l2"), CFG.l2, "l2");
-      total = flyers.length;
-
-      function init() {
-        // chữ thật
-        flyers.forEach((f) =>
-          mk(f, parseFloat(getComputedStyle(f.slot).fontSize)),
-        );
-        // chữ gây nhiễu bay lung tung
-        for (let i = 0; i < 34; i++) {
-          const f = { real: false, c: "", cls: "" };
-          flyers.push(f);
-          mk(f, R(18, 56));
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: 'ciYlljR7BEM',
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'loop': 1,
+                    'playlist': 'ciYlljR7BEM'
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
         }
-        requestAnimationFrame(tick);
-      }
-      function mk(f, size) {
-        const e = document.createElement("div");
-        e.className = "fly";
-        e.style.fontSize = size + "px";
-        e.style.opacity = f.real ? 1 : 0.55;
-        e.style.color = rnd([
-          "#ffb3d4",
-          "#ff6fae",
-          "#ffd9a8",
-          "#e0b3ff",
-          "#fff",
-        ]);
-        e.textContent = rnd(POOL);
-        document.body.appendChild(e);
-        Object.assign(f, {
-          el: e,
-          x: R(0, W),
-          y: R(0, H),
-          vx: R(-2.6, 2.6),
-          vy: R(-2.6, 2.6),
-          rot: R(0, 360),
-          vr: R(-4, 4),
-          t: R(0, 6),
-          sc: 1,
-          state: "fly",
-        });
-      }
-      function tick() {
-        flyers.forEach((f) => {
-          if (f.state === "done" || !f.el) return;
-          if (f.state === "fly") {
-            f.vx += R(-0.12, 0.12);
-            f.vy += R(-0.12, 0.12);
-            const m = Math.hypot(f.vx, f.vy),
-              mx = 3.2;
-            if (m > mx) {
-              f.vx *= mx / m;
-              f.vy *= mx / m;
+
+        function onPlayerReady(event) {
+            // Restore saved state or default ON
+            const savedState = localStorage.getItem('12c4_music_state');
+            if (savedState === 'off') {
+                isMusicPlaying = false;
+                updateAudioUI(false);
+            } else {
+                attemptAutoplay();
             }
-            f.x += f.vx;
-            f.y += f.vy;
-            f.rot += f.vr;
-            f.t += 0.04;
-            f.sc = 1 + Math.sin(f.t) * 0.35;
-            if (f.x < 0 || f.x > W) f.vx *= -1;
-            if (f.y < 0 || f.y > H) f.vy *= -1;
-            f.x = Math.max(-10, Math.min(W + 10, f.x));
-            f.y = Math.max(-10, Math.min(H + 10, f.y));
-          } else {
-            const k = 0.075;
-            f.x += (f.tx - f.x) * k;
-            f.y += (f.ty - f.y) * k;
-            f.rot += (0 - f.rot) * k;
-            f.sc += (1 - f.sc) * k;
-            if (Math.hypot(f.tx - f.x, f.ty - f.y) < 1.2 && Math.abs(f.rot) < 1)
-              land(f);
-          }
-          f.el.style.transform = `translate(${f.x}px,${f.y}px) translate(-50%,-50%) rotate(${f.rot}deg) scale(${f.sc})`;
-        });
-        requestAnimationFrame(tick);
-      }
-      function land(f) {
-        f.state = "done";
-        f.el.remove();
-        f.slot.classList.add("ok");
-        sparkle(f.slot);
-        if (++landed === total) {
-          $("hint").textContent = "Giải mã thành công 💖";
-          heartStorm();
-          setTimeout(showCard, 1800);
         }
-      }
-      setInterval(
-        () =>
-          flyers.forEach((f) => {
-            if (f.el && f.state !== "done" && Math.random() < 0.4)
-              f.el.textContent = rnd(POOL);
-          }),
-        150,
-      );
 
-      function decode() {
-        if (decoding) return;
-        decoding = true;
-        $("btn").style.display = "none";
-        $("hint").textContent = "Các chữ cái đang tìm về nhau... ✨";
-        let i = 0;
-        flyers.forEach((f) => {
-          if (f.real) {
-            setTimeout(
-              () => {
-                const r = f.slot.getBoundingClientRect();
-                f.tx = r.left + r.width / 2;
-                f.ty = r.top + r.height / 2;
-                f.rot = (((f.rot % 360) + 540) % 360) - 180;
-                f.state = "go";
-                f.el.textContent = f.c;
-              },
-              600 + i++ * 160,
-            );
-          } else {
-            setTimeout(
-              () => {
-                f.el.style.opacity = 0;
-              },
-              500 + R(0, 1500),
-            );
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                isMusicPlaying = true;
+                updateAudioUI(true);
+                hideAutoplayToast();
+            }
+        }
+
+        function attemptAutoplay() {
+            if (!player) return;
+            player.playVideo();
+            
+            // Check browser interaction restriction
             setTimeout(() => {
-              f.state = "done";
-              f.el.remove();
-            }, 2600);
-          }
+                if (player.getPlayerState() !== YT.PlayerState.PLAYING) {
+                    showAutoplayToast();
+                    document.body.addEventListener('click', function enableAudioOnce() {
+                        if (player) {
+                            player.playVideo();
+                            isMusicPlaying = true;
+                            updateAudioUI(true);
+                            localStorage.setItem('12c4_music_state', 'on');
+                        }
+                        hideAutoplayToast();
+                    }, { once: true });
+                } else {
+                    isMusicPlaying = true;
+                    updateAudioUI(true);
+                }
+            }, 800);
+        }
+
+        function showAutoplayToast() {
+            const toast = document.getElementById('autoplay-toast');
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function hideAutoplayToast() {
+            const toast = document.getElementById('autoplay-toast');
+            toast.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Toggle Audio Play/Pause
+        document.getElementById('music-toggle-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (!player) return;
+            if (isMusicPlaying) {
+                player.pauseVideo();
+                isMusicPlaying = false;
+                localStorage.setItem('12c4_music_state', 'off');
+                updateAudioUI(false);
+            } else {
+                player.playVideo();
+                isMusicPlaying = true;
+                localStorage.setItem('12c4_music_state', 'on');
+                updateAudioUI(true);
+            }
         });
-      }
-      $("btn").onclick = decode;
-      $("stage").addEventListener("click", (e) => {
-        if (e.target.id !== "btn") decode();
-      });
-      addEventListener("resize", () => {
-        W = innerWidth;
-        H = innerHeight;
-      });
-      (document.fonts && document.fonts.ready
-        ? document.fonts.ready
-        : Promise.resolve()
-      ).then(init);
 
-      function sparkle(el) {
-        const r = el.getBoundingClientRect();
-        for (let i = 0; i < 4; i++)
-          burst(r.left + r.width / 2, r.top + r.height / 2, "✦", 10);
-      }
-      function burst(x, y, ch, size) {
-        const b = document.createElement("div");
-        b.className = "burst";
-        b.textContent = ch;
-        b.style.cssText += `left:${x}px;top:${y}px;font-size:${size + R(0, 10)}px;color:#ffc2dc;--bx:${R(-70, 70)}px;--by:${R(-70, 70)}px`;
-        document.body.appendChild(b);
-        setTimeout(() => b.remove(), 900);
-      }
-      const HEARTS = ["❤", "💖", "💗", "💕", "💘", "🌸", "🌹", "💝"];
-      function heart() {
-        const h = document.createElement("div");
-        h.className = "heart";
-        h.textContent = rnd(HEARTS);
-        const d = R(5, 11);
-        h.style.cssText += `left:${R(0, 100)}vw;font-size:${R(16, 44)}px;animation-duration:${d}s;--dx:${R(-80, 80)}px;--rot:${R(-40, 40)}deg;opacity:${R(0.6, 1)}`;
-        document.body.appendChild(h);
-        setTimeout(() => h.remove(), d * 1000);
-      }
-      function heartStorm() {
-        for (let i = 0; i < 40; i++) setTimeout(heart, i * 60);
-      }
+        function updateAudioUI(playing) {
+            const eqWidget = document.getElementById('eq-widget');
+            const musicIcon = document.getElementById('music-icon');
+            if (playing) {
+                eqWidget.classList.remove('paused');
+                musicIcon.className = "fa-solid fa-volume-high text-pink-600";
+            } else {
+                eqWidget.classList.add('paused');
+                musicIcon.className = "fa-solid fa-volume-xmark text-slate-400";
+            }
+        }
 
-      function showCard() {
-        $("stage").classList.add("hide");
-        $("card").classList.add("show");
-        setInterval(heart, 280);
-        heartStorm();
-        let i = 0;
-        setTimeout(function type() {
-          $("msg").textContent = CFG.intro.slice(0, ++i);
-          if (i < CFG.intro.length) setTimeout(type, 40);
-          else {
-            document
-              .querySelectorAll(".w")
-              .forEach((w, k) =>
-                setTimeout(() => w.classList.add("on"), k * 350),
-              );
-            setTimeout(() => $("quote").classList.add("on2"), 1700);
-            setTimeout(() => $("sign").classList.add("on2"), 2500);
-            setTimeout(() => ($("btns").style.opacity = 1), 3000);
-          }
-        }, 1200);
-      }
-      addEventListener("keydown", (e) => {
-        if (e.code === "Space") {
-          e.preventDefault();
-          if (!decoding) decode();
-          else heartStorm();
+        // SFX sound setup (Web Audio API Synthesizer fallback)
+        function playFlipSound() {
+            if (!isSfxEnabled) return;
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                const bufferSize = audioCtx.sampleRate * 0.12;
+                const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+                const data = buffer.getChannelData(0);
+                for (let i = 0; i < bufferSize; i++) {
+                    data[i] = Math.random() * 2 - 1;
+                }
+
+                const noise = audioCtx.createBufferSource();
+                noise.buffer = buffer;
+
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'bandpass';
+                filter.frequency.value = 1000;
+                filter.Q.value = 3;
+
+                const gain = audioCtx.createGain();
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.12);
+
+                noise.connect(filter);
+                filter.connect(gain);
+                gain.connect(audioCtx.destination);
+
+                noise.start();
+            } catch (err) {
+                console.log("SFX error:", err);
+            }
         }
-      });
-      const cur = document.createElement("div");
-      cur.id = "cur";
-      cur.innerHTML = "<span>❤</span>";
-      document.body.appendChild(cur);
-      let lt = 0;
-      addEventListener("pointermove", (e) => {
-        cur.style.transform = `translate(${e.clientX}px,${e.clientY}px) translate(-50%,-50%)`;
-        cur.style.opacity = 1;
-        const n = performance.now();
-        if (n - lt < 50) return;
-        lt = n;
-        const t = document.createElement("div");
-        t.className = "trail";
-        t.textContent = rnd(["❤", "💖", "💗", "💕"]);
-        t.style.cssText += `left:${e.clientX}px;top:${e.clientY}px;font-size:${R(10, 20)}px;--tx:${R(-30, 30)}px`;
-        document.body.appendChild(t);
-        setTimeout(() => t.remove(), 1100);
-      });
-      document.addEventListener("mouseleave", () => (cur.style.opacity = 0));
-      $("card").addEventListener("click", (e) => {
-        if (e.target.tagName !== "BUTTON") {
-          for (let i = 0; i < 6; i++)
-            burst(e.clientX, e.clientY, rnd(HEARTS), 18);
+
+        document.getElementById('sfx-toggle-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            isSfxEnabled = !isSfxEnabled;
+            const icon = document.getElementById('sfx-icon');
+            icon.className = isSfxEnabled ? "fa-solid fa-book-open text-purple-700" : "fa-solid fa-book text-slate-400";
+        });
+
+        // Initialize PageFlip with Mobile Optimization
+        window.addEventListener('DOMContentLoaded', () => {
+            const flipContainer = document.getElementById('flipbook');
+            const isMobile = window.innerWidth < 768;
+
+            const width = isMobile ? Math.min(window.innerWidth - 24, 380) : 440;
+            const height = isMobile ? Math.min(window.innerHeight - 180, 580) : 620;
+
+            pageFlip = new St.PageFlip(flipContainer, {
+                width: width,
+                height: height,
+                size: "fixed",
+                minWidth: 280,
+                maxWidth: 500,
+                minHeight: 400,
+                maxHeight: 700,
+                maxShadowOpacity: 0.25,
+                showCover: true,
+                mobileScrollSupport: false,
+                usePortrait: isMobile,
+                startPage: 0,
+                drawShadow: true,
+                flippingTime: 700
+            });
+
+            pageFlip.loadFromHTML(document.querySelectorAll('.page'));
+            flipContainer.classList.remove('opacity-0');
+
+            pageFlip.on('flip', (e) => {
+                document.getElementById('current-page-num').innerText = e.data + 1;
+                playFlipSound();
+            });
+        });
+
+        // Navigation controls
+        function prevPage() { if (pageFlip) pageFlip.flipPrev(); }
+        function nextPage() { if (pageFlip) pageFlip.flipNext(); }
+
+        function jumpToPage(pageIndex) {
+            if (pageFlip) {
+                pageFlip.turnToPage(pageIndex);
+                toggleTocModal();
+            }
         }
-      });
+
+        // Modals
+        function toggleTocModal() {
+            document.getElementById('toc-modal').classList.toggle('opacity-0');
+            document.getElementById('toc-modal').classList.toggle('pointer-events-none');
+        }
+        function openQrModal() {
+            document.getElementById('qr-modal').classList.remove('opacity-0', 'pointer-events-none');
+        }
+        function closeQrModal() {
+            document.getElementById('qr-modal').classList.add('opacity-0', 'pointer-events-none');
+        }
+        function openPhotoModal(src, caption) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal-caption').innerText = caption;
+            document.getElementById('photo-modal').classList.remove('opacity-0', 'pointer-events-none');
+        }
+        function closePhotoModal() {
+            document.getElementById('photo-modal').classList.add('opacity-0', 'pointer-events-none');
+        }
+        function toggleFullScreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            } else {
+                if (document.exitFullscreen) document.exitFullscreen();
+            }
+        }
     </script>
-  </body>
+</body>
 </html>
