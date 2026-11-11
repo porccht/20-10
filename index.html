@@ -754,9 +754,10 @@
     .grid-notebook-sheet {
       background-color: #fcfaf5;
       background-image:
-        linear-gradient(to right, rgba(148, 163, 184, 0.25) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(148, 163, 184, 0.25) 1px, transparent 1px);
-      background-size: 18px 18px;
+        linear-gradient(to right, rgba(148, 163, 184, 0.26) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.34) 1.2px, transparent 1.2px);
+      background-size: 22px 22px;
+      background-position: 0 4px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     }
 
@@ -912,9 +913,10 @@
       position: relative;
       background-color: #fffef9;
       background-image:
-        linear-gradient(to right, rgba(135, 152, 174, 0.28) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(135, 152, 174, 0.28) 1px, transparent 1px);
-      background-size: 14px 14px;
+        linear-gradient(to right, rgba(135, 152, 174, 0.26) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(135, 152, 174, 0.36) 1.2px, transparent 1.2px);
+      background-size: 22px 22px;
+      background-position: 0 4px;
       border-radius: 12px 18px 14px 20px;
       border: 1.5px solid #ffffff;
       box-shadow:
@@ -1039,17 +1041,15 @@
       font-size: 11px;
       font-weight: 700;
       color: #4a3525;
-      flex-shrink: 0;
-    }
-
-    /* Ultra-detailed Hand-cut Stepped Grid Paper (Giống cắt kéo theo từng dòng thơ) */
+    /* Ultra-detailed Hand-cut Stepped Grid Paper (Dòng kẻ ngang to rõ, khớp chữ hạn chế lệch) */
     .stepped-grid-poem {
       position: relative;
       background-color: #fffef9;
       background-image:
-        linear-gradient(to right, rgba(110, 132, 160, 0.34) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(110, 132, 160, 0.34) 1px, transparent 1px);
-      background-size: 11px 11px;
+        linear-gradient(to right, rgba(110, 132, 160, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(110, 132, 160, 0.38) 1.2px, transparent 1.2px);
+      background-size: 22px 22px;
+      background-position: 0 3px;
       border: 2px solid #ffffff;
       box-shadow:
         0 6px 12px rgba(28, 14, 8, 0.24),
@@ -1058,16 +1058,18 @@
       border-radius: 8px 14px 10px 16px;
     }
 
-    /* Individual Scissor-Cut Line Strip on Grid Paper (Cắt bậc thang sát từng câu thơ) */
+    /* Individual Scissor-Cut Line Strip on Grid Paper (Dòng kẻ ngang to 24px ôm khít từng câu thơ) */
     .grid-line-strip {
       display: inline-block;
       background-color: #fffef9;
       background-image:
-        linear-gradient(to right, rgba(110, 132, 160, 0.34) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(110, 132, 160, 0.34) 1px, transparent 1px);
-      background-size: 10px 10px;
-      padding: 1px 10px;
-      margin: -1px 0;
+        linear-gradient(to right, rgba(110, 132, 160, 0.24) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(110, 132, 160, 0.38) 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+      background-position: 0 2px;
+      line-height: 24px;
+      padding: 0px 11px;
+      margin: -0.5px 0;
       border-left: 2px solid #ffffff;
       border-right: 2px solid #ffffff;
       box-shadow: 2px 2px 4px rgba(30, 16, 10, 0.14);
@@ -1503,15 +1505,24 @@
        ========================================================================== -->
   <header class="fixed top-3 left-0 right-0 z-50 px-3 sm:px-6 flex items-center justify-between pointer-events-none">
     <div class="liquid-glass px-3.5 py-2 flex items-center gap-2.5 pointer-events-auto max-w-[58vw] sm:max-w-none">
-      <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 via-orange-500 to-rose-500 flex items-center justify-center text-white shadow-md shrink-0">
-        <i class="fa-solid fa-book-open-reader text-xs"></i>
+      <div
+        onclick="openPhotoZoomModal(this, event)"
+        data-caption="✨ Thanh Long ❤️‍🩹 — Tác giả Code & Thiết kế Tập San Điện Tử 12C4"
+        class="zoomable-photo-card w-8 h-8 rounded-full overflow-hidden border-2 border-amber-300 shadow-md shrink-0 bg-stone-800 cursor-pointer"
+        title="Nhấn để phóng to Avatar Thanh Long ❤️‍🩹"
+      >
+        <img
+          src="https://github.com/porccht/T-p-San-12C4/raw/main/thanhlong.png"
+          alt="Avatar Thanh Long"
+          class="w-full h-full object-cover block"
+        />
       </div>
       <div class="truncate">
         <div class="flex items-center gap-1.5">
           <span class="text-xs sm:text-sm font-bold text-white tracking-wide truncate">Tập San Điện Tử 12C4</span>
         </div>
         <p class="text-[10px] sm:text-[11px] text-amber-100/85 truncate">
-          Thiết kế bởi <strong class="text-amber-300 font-semibold">Thanh Long ❤️‍🩹</strong>
+          Code bởi <a href="https://fb.com/htl165" target="_blank" rel="noopener noreferrer" class="text-amber-300 font-semibold hover:underline pointer-events-auto">Thanh Long ❤️‍🩹</a>
         </p>
       </div>
     </div>
@@ -1610,7 +1621,7 @@
             Mục Lục Tập San Điện Tử 12C4
           </h3>
           <p class="text-xs text-amber-100/80">
-            Chủ đề: 20/11 • Thiết kế bởi Thanh Long ❤️‍🩹
+            Chủ đề: 20/11 • Code bởi <a href="https://fb.com/htl165" target="_blank" rel="noopener noreferrer" class="text-amber-300 font-semibold hover:underline">Thanh Long ❤️‍🩹</a>
           </p>
         </div>
         <button onclick="toggleTocModal()" class="liquid-btn px-3 py-1.5 text-xs">
@@ -1634,16 +1645,16 @@
   </div>
 
   <!-- ==========================================================================
-       INTERACTIVE PHOTO LIGHTBOX ZOOM MODAL (CHO TRANG 12 & TRANG 13)
+       INTERACTIVE PHOTO LIGHTBOX ZOOM MODAL (CHO TOÀN BỘ ẢNH TRONG TẬP SAN)
        ========================================================================== -->
   <div
     id="photo-zoom-overlay"
     onclick="closePhotoZoomModal()"
-    class="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-4 opacity-0 invisible cursor-zoom-out"
+    class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 opacity-0 invisible cursor-zoom-out"
   >
     <div
       id="photo-zoom-card"
-      class="bg-[#fffdf9] p-3 sm:p-4 pb-5 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.75)] border-4 border-white max-w-lg w-full transform scale-75 relative text-center"
+      class="bg-[#fffdf9] p-3 sm:p-4 pb-5 rounded-2xl shadow-[0_25px_70px_rgba(0,0,0,0.75)] border-4 border-white max-w-3xl w-full transform scale-75 relative text-center"
     >
       <div class="push-pin-3d"></div>
       <div class="washi-tape -top-3 left-8 -rotate-6"></div>
@@ -1652,7 +1663,7 @@
         id="photo-zoom-img"
         src=""
         alt="Phóng to ảnh kỷ niệm 12C4"
-        class="w-full max-h-[62vh] object-contain rounded-lg border border-stone-200 shadow-inner bg-stone-900/5"
+        class="w-full max-h-[75vh] object-contain rounded-lg border border-stone-200 shadow-inner bg-stone-900/5"
       />
       <p id="photo-zoom-caption" class="font-editorial text-lg sm:text-xl font-bold text-[#2c1e16] mt-3"></p>
       <p class="font-sans text-[11px] text-[#9e2a2b] font-semibold mt-1">
@@ -1705,9 +1716,9 @@
                 <text x="368" y="424" text-anchor="middle" transform="rotate(-6 368 424)" font-family="'Great Vibes', 'Dancing Script', cursive" font-size="55" stroke="#3b1518" stroke-width="0.45">Nắng</text>
               </g>
 
-              <!-- Chữ dọc "chi đoàn 12C4" chạy từ dưới bảng mây xuống ngay đỉnh Logo THPT Thiệu Hóa -->
-              <g transform="translate(96, 336) rotate(85)">
-                <text x="0" y="0" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="45" font-style="italic" font-weight="600" fill="#fdf7f2" letter-spacing="1.5" style="filter: drop-shadow(1px 2px 3px rgba(28, 4, 10, 0.55));">chi đoàn 12C4</text>
+              <!-- Chữ dọc "Chi Đoàn 12C4" dịch sang trái (x=66) để không bị hoa lá che khuất -->
+              <g transform="translate(66, 342) rotate(86)">
+                <text x="0" y="0" text-anchor="middle" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="44" font-style="italic" font-weight="700" fill="#fdf7f2" letter-spacing="1.5" style="filter: drop-shadow(1px 2px 3px rgba(28, 4, 10, 0.65));">Chi Đoàn 12C4</text>
               </g>
 
               <!-- LỚP 5: TẦNG LÁ NỀN PHÍA DƯỚI (UNDER-LAYER LEAVES) -->
@@ -2062,17 +2073,17 @@
               </div>
             </div>
 
-            <!-- TỜ GIẤY VỞ KẺ Ô VUÔNG ĐƯỢC CĂN CHỈNH CỠ CHỮ & KHOẢNG CÁCH DÒNG VỪA KHÍT 100% TRANG KHÔNG DƯ KHÔNG THIẾU -->
-            <div class="stepped-grid-poem relative z-20 my-1.5 ml-3 mr-3.5 px-3 py-2.5 flex-1 flex flex-col justify-between overflow-hidden text-[#1a202c]">
+            <!-- TỜ GIẤY VỞ KẺ Ô VUÔNG ĐƯỢC CĂN CHỈNH CỠ CHỮ TO RÕ & DÒNG KẺ NGANG LỚN ĐỀU ĐẶN KÍN TRANG -->
+            <div class="stepped-grid-poem relative z-20 my-1.5 ml-3 mr-3.5 px-3.5 py-2.5 flex-1 flex flex-col justify-between overflow-hidden text-[#1a202c]">
               <div class="flex items-center justify-between border-b border-slate-300/90 pb-1">
-                <span class="font-script text-lg font-bold text-[#2d1810]">Lời ngỏ tri ân</span>
-                <span class="font-mono text-[9.5px] font-black text-[#4a3520] bg-[#e9edc9] px-2 py-0.5 rounded-full border border-[#a3b18a]">
-                  - Chi đoàn 12C4 • K53 -
+                <span class="font-script text-xl font-bold text-[#2d1810]">Lời ngỏ tri ân</span>
+                <span class="font-mono text-[10px] font-black text-[#4a3520] bg-[#e9edc9] px-2.5 py-0.5 rounded-full border border-[#a3b18a]">
+                  - Chi Đoàn 12C4 • K53 -
                 </span>
               </div>
 
-              <div class="font-editorial text-[12.2px] sm:text-[12.6px] leading-[1.48] space-y-2 text-justify my-auto py-1">
-                <p class="italic font-bold text-center text-[#7c1d1d] bg-amber-50/70 py-1 rounded border border-amber-200/70">
+              <div class="font-editorial text-[13.6px] sm:text-[14.2px] leading-[22px] space-y-2 text-justify my-auto py-1">
+                <p class="italic font-bold text-center text-[#7c1d1d] bg-amber-50/80 py-1 rounded border border-amber-200/80">
                   “Ánh đèn soi rọi tác thành — Thầy cô soi sáng bước đường tương lai.”
                 </p>
                 <p class="indent-4">
@@ -2082,13 +2093,13 @@
                   Nhớ lại những ngày đầu tiên bước chân vào trường với bao bỡ ngỡ, chính sự tận tình và bao dung của thầy cô đã giúp chúng em nhanh chóng hòa nhập, tìm thấy niềm vui trong từng tiết học. Thầy cô không chỉ truyền thụ tri thức mà còn là người cha, người mẹ thứ hai luôn thấu hiểu, chở che và tiếp thêm nghị lực để chúng em vượt qua mọi thử thách.
                 </p>
                 <p class="indent-4">
-                  Nhân dịp kỷ niệm ngày Nhà giáo Việt Nam 20/11, tập thể <strong>Chi đoàn 12C4</strong> xin gửi gắm trọn vẹn tấm lòng tri ân qua cuốn tập san <strong>“Người Gieo Hạt Nắng”</strong>. Kính chúc quý thầy cô luôn dồi dào sức khỏe, hạnh phúc và giữ mãi ngọn lửa nhiệt huyết với sự nghiệp trồng người cao cả!
+                  Nhân dịp kỷ niệm ngày Nhà giáo Việt Nam 20/11, tập thể <strong>Chi Đoàn 12C4</strong> xin gửi gắm trọn vẹn tấm lòng tri ân qua cuốn tập san <strong>“Người Gieo Hạt Nắng”</strong>. Kính chúc quý thầy cô luôn dồi dào sức khỏe, hạnh phúc và giữ mãi ngọn lửa nhiệt huyết với sự nghiệp trồng người cao cả!
                 </p>
               </div>
 
-              <div class="flex items-center justify-between border-t border-dashed border-slate-300 pt-1 text-[10.5px] font-editorial italic text-[#5c4332]">
+              <div class="flex items-center justify-between border-t border-dashed border-slate-300 pt-1 text-[11px] font-editorial italic text-[#5c4332]">
                 <span>Thiệu Hóa, mùa tri ân tháng 11/2026</span>
-                <span class="font-script text-sm font-bold text-[#9e2a2b] not-italic">— Tập thể lớp 12C4 —</span>
+                <span class="font-script text-base font-bold text-[#9e2a2b] not-italic">— Tập thể lớp 12C4 —</span>
               </div>
             </div>
 
@@ -2129,32 +2140,32 @@
               </div>
             </div>
 
-            <!-- Phần 1 & Phần 2 được căn chỉnh khoảng cách dòng và dấu đầu dòng đồng bộ 100% với nhau -->
-            <div class="my-auto space-y-2 text-[11.5px] sm:text-[11.8px] leading-[1.42] text-[#1a202c] font-editorial pr-1 flex-1 flex flex-col justify-between relative z-10">
+            <!-- Phần 1 & Phần 2 được căn chỉnh cỡ chữ to rõ, dòng kẻ lớn và ảnh Phiến đá khát vọng to ngang bằng ảnh Lịch sử trường -->
+            <div class="my-auto space-y-2 text-[12.6px] sm:text-[13px] leading-[22px] text-[#1a202c] font-editorial pr-1 flex-1 flex flex-col justify-between relative z-10">
               <!-- Khối 1: Lịch sử trường -->
-              <div class="space-y-1.5">
+              <div class="space-y-1">
                 <div class="grid grid-cols-12 gap-2 items-center">
-                  <ul class="col-span-7 space-y-1.5 list-disc pl-3.5 text-justify">
+                  <ul class="col-span-6 space-y-1 list-disc pl-3.5 text-justify">
                     <li><strong>Trường THPT Thiệu Hóa</strong> được thành lập vào <strong>năm 1972</strong>.</li>
                     <li>Nhà trường đã trải qua hơn 50 năm xây dựng và trưởng thành vẻ vang.</li>
                     <li>Cơ sở vật chất được tu sửa khang trang, hiện đại giai đoạn 2023 – 2026.</li>
                   </ul>
 
-                  <!-- Ảnh 1: Lịch sử trường THPT Thiệu Hóa (Ghi chú ảnh) -->
+                  <!-- Ảnh 1: Lịch sử trường THPT Thiệu Hóa (Ghi chú ảnh lớn) -->
                   <div
                     onclick="openPhotoZoomModal(this, event)"
                     data-caption="🏫 Lịch sử Trường THPT Thiệu Hóa (Thành lập năm 1972)"
-                    class="zoomable-photo-card col-span-5 sticky-note-card bg-[#fff9db] p-1.5 border-2 border-amber-300 shadow-md transform rotate-1"
+                    class="zoomable-photo-card col-span-6 sticky-note-card bg-[#fff9db] p-1.5 border-2 border-amber-300 shadow-md transform rotate-1"
                     title="Nhấn để phóng to ảnh"
                   >
                     <div class="push-pin-3d push-pin-gold"></div>
                     <img
                       src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang4.1.jpg"
                       alt="Lịch sử trường THPT Thiệu Hóa"
-                      class="w-full h-20 sm:h-22 object-cover rounded border border-amber-200 mt-0.5"
+                      class="w-full h-24 sm:h-28 object-cover rounded border border-amber-200 mt-0.5"
                     />
-                    <p class="font-hand text-[8px] font-bold text-[#7c2d12] text-center mt-0.5 leading-tight">
-                      📌 Trường THPT Thiệu Hóa
+                    <p class="font-hand text-[9px] font-bold text-[#7c2d12] text-center mt-0.5 leading-tight">
+                      📌 Trường THPT Thiệu Hóa (🔍 Zoom)
                     </p>
                   </div>
                 </div>
@@ -2165,8 +2176,8 @@
                 </ul>
               </div>
 
-              <!-- Khối 2: Phiến đá khát vọng (Kèm ảnh ghi chú số 2 Phiến đá khát vọng) -->
-              <div class="pt-1 border-t border-dashed border-slate-300/90 space-y-1.5">
+              <!-- Khối 2: Phiến đá khát vọng (Ảnh ghi chú số 2 được phóng to ngang bằng ảnh Lịch sử trường) -->
+              <div class="pt-1 border-t border-dashed border-slate-300/90 space-y-1">
                 <div class="flex items-center justify-between">
                   <span class="font-script text-lg font-extrabold text-[#c92a2a] bg-white px-3 py-0.5 rounded-full shadow-sm border border-rose-200">
                     • Phiến đá khát vọng •
@@ -2177,32 +2188,32 @@
                 </div>
 
                 <div class="grid grid-cols-12 gap-2 items-center">
-                  <ul class="col-span-7 space-y-1 list-disc pl-3.5 text-justify">
-                    <li><strong>Nguồn gốc & Ý nghĩa:</strong> Phiến đá mang tên <em>“Khát vọng”</em> tại sân trường là nơi gửi gắm ước mơ, hoài bão vươn xa của biết bao thế hệ thầy và trò <strong>THPT Thiệu Hóa</strong>.</li>
+                  <ul class="col-span-6 space-y-1 list-disc pl-3.5 text-justify">
+                    <li><strong>Nguồn gốc & Ý nghĩa:</strong> Phiến đá mang tên <em>“Khát vọng”</em> tại sân trường là nơi gửi gắm ước mơ, hoài bão vươn xa của thầy và trò <strong>THPT Thiệu Hóa</strong>.</li>
                     <li><strong>Tâm huyết Thầy Cô:</strong> Luôn gương mẫu, tận tụy chăm lo cho từng bước trưởng thành của học sinh.</li>
                   </ul>
 
-                  <!-- Ảnh 2: Ghi chú ảnh Phiến đá khát vọng -->
+                  <!-- Ảnh 2: Ghi chú ảnh Phiến đá khát vọng (To ngang bằng ảnh Lịch sử trường) -->
                   <div
                     onclick="openPhotoZoomModal(this, event)"
                     data-caption="🪨 Phiến đá Khát vọng — Biểu tượng ước mơ trường THPT Thiệu Hóa"
-                    class="zoomable-photo-card col-span-5 sticky-note-card bg-[#ffdeeb] p-1.5 border-2 border-rose-300 shadow-md transform -rotate-2"
+                    class="zoomable-photo-card col-span-6 sticky-note-card bg-[#ffdeeb] p-1.5 border-2 border-rose-300 shadow-md transform -rotate-1"
                     title="Nhấn để phóng to ảnh"
                   >
                     <div class="push-pin-3d"></div>
                     <img
                       src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang4.2.jpg"
                       alt="Phiến đá khát vọng THPT Thiệu Hóa"
-                      class="w-full h-20 sm:h-22 object-cover rounded border border-rose-200 mt-0.5"
+                      class="w-full h-24 sm:h-28 object-cover rounded border border-rose-200 mt-0.5"
                     />
-                    <p class="font-hand text-[8px] font-bold text-[#590d22] text-center mt-0.5 leading-tight">
-                      📌 Phiến đá khát vọng
+                    <p class="font-hand text-[9px] font-bold text-[#590d22] text-center mt-0.5 leading-tight">
+                      📌 Phiến đá khát vọng (🔍 Zoom)
                     </p>
                   </div>
                 </div>
 
                 <ul class="space-y-1 list-disc pl-3.5 text-justify">
-                  <li><strong>Lời hứa Chi đoàn 12C4:</strong> Tiếp nối truyền thống hiếu học xứ Thanh, luôn khắc ghi <span class="text-[#c92a2a] font-bold">“thất bại là mẹ thành công”</span> và hẹn gặp lại nhau ở đỉnh vinh quang!</li>
+                  <li><strong>Lời hứa Chi Đoàn 12C4:</strong> Tiếp nối truyền thống hiếu học xứ Thanh, luôn khắc ghi <span class="text-[#c92a2a] font-bold">“thất bại là mẹ thành công”</span> và hẹn gặp lại nhau ở đỉnh vinh quang!</li>
                 </ul>
               </div>
             </div>
@@ -2298,32 +2309,32 @@
 
               <!-- Cột giữa: Cơ cấu Hộp Thẻ Kéo Đỏ PULL ↓ (Waterfall Card) -->
               <div class="col-span-6 flex flex-col items-center">
-                <div class="w-full bg-[#c92a2a] rounded-xl p-2 shadow-[0_10px_24px_rgba(150,20,20,0.5)] border-2 border-[#a61e1e] flex flex-col items-center relative">
+              <!-- Cột giữa: Cơ cấu Hộp Thẻ Kéo Đỏ PULL ↓ (Đã thu gọn phần trên để khi kéo xuống thấy trọn vẹn ảnh cuối) -->
+              <div class="col-span-6 flex flex-col items-center">
+                <div class="w-full bg-[#c92a2a] rounded-xl p-1.5 shadow-[0_10px_24px_rgba(150,20,20,0.5)] border-2 border-[#a61e1e] flex flex-col items-center relative">
                   <!-- Ảnh 1 Trang 5: Lễ Khai Giảng trên mặt hộp đỏ -->
                   <div
                     onclick="openPhotoZoomModal(this, event)"
                     data-caption="🎉 Lễ Khai Giảng Trường THPT Thiệu Hóa"
-                    class="zoomable-photo-card w-full bg-white p-1.5 rounded shadow-md border border-slate-300"
+                    class="zoomable-photo-card w-full bg-white p-1 rounded shadow-md border border-slate-300"
                   >
                     <img
                       src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.1.jpg"
                       alt="Lễ Khai Giảng THPT Thiệu Hóa"
-                      class="w-full h-24 sm:h-26 object-cover rounded border border-slate-200"
+                      class="w-full h-18 sm:h-20 object-cover rounded border border-slate-200"
                     />
                   </div>
 
-                  <!-- 5 Thanh xếp tầng Waterfall màu trắng đan đỏ giống hệt ảnh mẫu 4 -->
-                  <div class="w-full space-y-1.5 mt-1.5 px-0.5">
-                    <div class="h-2 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
-                    <div class="h-2 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
-                    <div class="h-2 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
-                    <div class="h-2 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
-                    <div class="h-2 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
+                  <!-- 3 Thanh xếp tầng Waterfall gọn gàng để dành không gian hiển thị trọn vẹn ảnh cuối -->
+                  <div class="w-full space-y-1 mt-1 px-0.5">
+                    <div class="h-1.5 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
+                    <div class="h-1.5 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
+                    <div class="h-1.5 bg-[#fcfaf5] rounded-xs shadow-xs border border-slate-300"></div>
                   </div>
 
-                  <!-- DẢI CÁC BỨC ẢNH XỔ XUỐNG KHI BẤM HOẶC KÉO PULL ↓ -->
-                  <div id="thieuhoa-pull-drawer" class="w-full overflow-hidden transition-all duration-500 max-h-0 bg-[#b02020] rounded-b-lg px-1.5 space-y-2">
-                    <div class="pt-1.5 text-[9px] font-bold text-amber-200 text-center uppercase tracking-wider">
+                  <!-- DẢI CÁC BỨC ẢNH XỔ XUỐNG KHI BẤM HOẶC KÉO PULL ↓ (Hiển thị rõ cả 3 ảnh bao gồm ảnh cuối trang5.4.jpg) -->
+                  <div id="thieuhoa-pull-drawer" class="w-full overflow-y-auto transition-all duration-500 max-h-0 bg-[#b02020] rounded-b-lg px-1.5 space-y-1.5">
+                    <div class="pt-1 text-[8.5px] font-bold text-amber-200 text-center uppercase tracking-wider">
                       ✨ Chuỗi Ảnh Kỷ Niệm THPT Thiệu Hóa ✨
                     </div>
                     <div
@@ -2331,37 +2342,37 @@
                       data-caption="🏫 Cổng trường THPT Thiệu Hóa thân yêu"
                       class="zoomable-photo-card bg-white p-1 rounded shadow"
                     >
-                      <img src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.2.jpg" class="w-full h-20 object-cover rounded" alt="Cổng trường THPT Thiệu Hóa" />
-                      <p class="text-[9px] text-center font-bold text-slate-700 mt-0.5">Cổng trường THPT Thiệu Hóa thân yêu</p>
+                      <img src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.2.jpg" class="w-full h-16 sm:h-18 object-cover rounded" alt="Cổng trường THPT Thiệu Hóa" />
+                      <p class="text-[8.5px] text-center font-bold text-slate-700 mt-0.5">Cổng trường THPT Thiệu Hóa thân yêu</p>
                     </div>
                     <div
                       onclick="openPhotoZoomModal(this, event)"
                       data-caption="🌳 Khung cảnh mái trường THPT Thiệu Hóa"
                       class="zoomable-photo-card bg-white p-1 rounded shadow"
                     >
-                      <img src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.3.jpg" class="w-full h-20 object-cover rounded" alt="Ảnh 3 THPT Thiệu Hóa" />
-                      <p class="text-[9px] text-center font-bold text-slate-700 mt-0.5">Sân trường rợp bóng nắng thu</p>
+                      <img src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.3.jpg" class="w-full h-16 sm:h-18 object-cover rounded" alt="Ảnh 3 THPT Thiệu Hóa" />
+                      <p class="text-[8.5px] text-center font-bold text-slate-700 mt-0.5">Sân trường rợp bóng nắng thu</p>
                     </div>
                     <div
                       onclick="openPhotoZoomModal(this, event)"
                       data-caption="❤️ Kỷ niệm dưới mái trường THPT Thiệu Hóa"
                       class="zoomable-photo-card bg-white p-1 rounded shadow mb-1"
                     >
-                      <img src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.4.jpg" class="w-full h-20 object-cover rounded" alt="Ảnh 4 THPT Thiệu Hóa" />
-                      <p class="text-[9px] text-center font-bold text-slate-700 mt-0.5">Thanh xuân 12C4 rực rỡ dưới mái trường</p>
+                      <img src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang5.4.jpg" class="w-full h-16 sm:h-18 object-cover rounded" alt="Ảnh 4 THPT Thiệu Hóa" />
+                      <p class="text-[8.5px] text-center font-bold text-slate-700 mt-0.5">Thanh xuân 12C4 rực rỡ dưới mái trường</p>
                     </div>
                   </div>
 
-                  <!-- Dải tab kéo màu đỏ in chữ viền đen rỗng 'PULL ↓ (kéo xuống) nhẹ tay ♡' giống hệt ảnh mẫu 4 -->
+                  <!-- Dải tab kéo màu đỏ in chữ viền đen rỗng 'PULL ↓ (kéo xuống) nhẹ tay ♡' -->
                   <button
                     onclick="togglePullDrawer(event)"
-                    class="w-full mt-2 py-1.5 px-2 rounded-lg bg-[#d62828] hover:bg-[#e03131] border-t-2 border-red-900/40 shadow-md transition flex flex-col items-center justify-center cursor-pointer group"
+                    class="w-full mt-1.5 py-1 px-2 rounded-lg bg-[#d62828] hover:bg-[#e03131] border-t-2 border-red-900/40 shadow-md transition flex flex-col items-center justify-center cursor-pointer group"
                   >
-                    <span class="pull-main-text font-display font-black text-xl tracking-widest text-white group-hover:scale-105 transition"
+                    <span class="pull-main-text font-display font-black text-lg tracking-widest text-white group-hover:scale-105 transition"
                           style="-webkit-text-stroke: 1.2px #1a120b; text-shadow: 2px 2px 0px #1a120b;">
                       PULL ↓
                     </span>
-                    <span class="pull-sub-text font-hand text-[9.5px] font-bold text-amber-100 mt-0.5">
+                    <span class="pull-sub-text font-hand text-[9px] font-bold text-amber-100">
                       (kéo xuống) nhẹ tay ♡
                     </span>
                   </button>
@@ -2462,25 +2473,14 @@
             <div class="absolute bottom-8 left-6 z-20 pointer-events-none flex items-end gap-1.5" style="filter: drop-shadow(0 4px 6px rgba(0,0,0,0.22));">
               <svg width="58" height="44" viewBox="0 0 80 60">
                 <rect x="6" y="38" width="64" height="12" rx="3" fill="#8c2d19" stroke="#4a150b" stroke-width="1.5" />
-                <rect x="9" y="40" width="58" height="8" fill="#fdf8ed" />
-                <rect x="10" y="26" width="56" height="12" rx="3" fill="#3d6b58" stroke="#1f3a2e" stroke-width="1.5" transform="rotate(-3 38 32)" />
-                <rect x="13" y="28" width="50" height="8" fill="#fdf8ed" transform="rotate(-3 38 32)" />
-                <rect x="14" y="14" width="48" height="11" rx="3" fill="#c9933b" stroke="#6e4e18" stroke-width="1.5" transform="rotate(2 38 19)" />
-                <path d="M 36,14 L 36,50 M 36,28 C 28,22 24,30 32,33 M 36,28 C 44,22 48,30 40,33" fill="none" stroke="#e63946" stroke-width="2" />
-              </svg>
-              <div class="w-7 h-7 rounded-full bg-gradient-to-br from-rose-500 to-red-900 border border-amber-200 shadow flex items-center justify-center text-[7px] font-script font-bold text-amber-100 transform -rotate-12">
-                20/11
-              </div>
-            </div>
-
-            <!-- Tiêu đề 'ngày Nhà Giáo' cắt dán từ giấy ô ly chữ hồng đậm có băng dính Washi -->
+            <!-- Tiêu đề 'ngày Nhà Giáo' cắt dán từ giấy ô ly (Chữ 'ngày' được phóng to đều hài hòa với chữ 'tri ân' bên trang 7) -->
             <div class="text-center mt-0.5 relative z-20">
               <div class="stepped-grid-poem inline-block px-6 py-1 rounded-[26px] transform -rotate-1 relative">
                 <div class="washi-tape washi-rose -top-2.5 left-1/2 -translate-x-1/2 w-16 h-3.5"></div>
-                <div class="flex items-center justify-center gap-1.5 -mb-1">
-                  <span class="w-7 h-[1.5px] bg-[#9e1c40]"></span>
-                  <span class="font-script text-xl font-bold text-[#9e1c40]">ngày</span>
-                  <span class="w-7 h-[1.5px] bg-[#9e1c40]"></span>
+                <div class="flex items-center justify-center gap-2 -mb-1">
+                  <span class="w-8 h-[2px] bg-[#9e1c40]"></span>
+                  <span class="font-script text-2xl sm:text-3xl font-extrabold text-[#9e1c40]">ngày</span>
+                  <span class="w-8 h-[2px] bg-[#9e1c40]"></span>
                 </div>
                 <div class="relative inline-block">
                   <span class="font-script text-4xl sm:text-5xl font-black tracking-wide"
@@ -2492,10 +2492,10 @@
               </div>
             </div>
 
-            <!-- 3 Khổ Thơ cắt viền bậc thang theo từng dòng trên giấy ô ly -->
-            <div class="my-auto space-y-3 py-1 relative z-20 flex flex-col items-center">
+            <!-- 3 Khổ Thơ cắt viền bậc thang theo từng dòng trên giấy ô ly (Đã phóng to chữ & tản đều kín trang) -->
+            <div class="my-auto space-y-2.5 py-1 relative z-20 flex flex-col items-center">
               <!-- Khổ 1 -->
-              <div class="flex flex-col items-start font-editorial text-[13px] sm:text-[13.5px] leading-[1.52] text-[#1f161a] filter drop-shadow-[0_4px_6px_rgba(60,20,35,0.18)] transform -rotate-0.5">
+              <div class="flex flex-col items-start font-editorial text-[14.2px] sm:text-[15px] text-[#1f161a] filter drop-shadow-[0_4px_6px_rgba(60,20,35,0.18)] transform -rotate-0.5">
                 <span class="grid-line-strip">Tháng Mười một, nắng vàng rực rỡ,</span>
                 <span class="grid-line-strip">Ngày tri ân, lòng kính mến dâng,</span>
                 <span class="grid-line-strip">Thầy cô ơi, như dòng suối mát,</span>
@@ -2503,7 +2503,7 @@
               </div>
 
               <!-- Khổ 2 -->
-              <div class="flex flex-col items-start font-editorial text-[13px] sm:text-[13.5px] leading-[1.52] text-[#1f161a] filter drop-shadow-[0_4px_6px_rgba(60,20,35,0.18)] transform rotate-0.5">
+              <div class="flex flex-col items-start font-editorial text-[14.2px] sm:text-[15px] text-[#1f161a] filter drop-shadow-[0_4px_6px_rgba(60,20,35,0.18)] transform rotate-0.5">
                 <span class="grid-line-strip">Những mùa thi, thầy cô bên cạnh,</span>
                 <span class="grid-line-strip">Động viên em vượt mọi thử thách</span>
                 <span class="grid-line-strip">Với tấm lòng trao đi kiến thức</span>
@@ -2511,16 +2511,21 @@
               </div>
 
               <!-- Khổ 3 -->
-              <div class="flex flex-col items-start font-editorial text-[13px] sm:text-[13.5px] leading-[1.52] text-[#1f161a] filter drop-shadow-[0_4px_6px_rgba(60,20,35,0.18)] transform -rotate-0.5">
+              <div class="flex flex-col items-start font-editorial text-[14.2px] sm:text-[15px] text-[#1f161a] filter drop-shadow-[0_4px_6px_rgba(60,20,35,0.18)] transform -rotate-0.5">
                 <span class="grid-line-strip">Mái trường xưa, kỉ niệm ùa về,</span>
                 <span class="grid-line-strip">Tiếng thầy giảng, cô dạy ân cần.</span>
                 <span class="grid-line-strip">Mỗi trang sách, chứa bao điều đẹp,</span>
                 <span class="grid-line-strip">Chắp cánh cho em vững bước chân.</span>
               </div>
 
-              <!-- Chữ ký tác giả cắt viền giấy trắng góc dưới phải -->
-              <div class="w-full text-right pr-2 pt-0.5">
-                <span class="inline-block bg-white px-4 py-0.5 rounded-full shadow-md border-2 border-rose-200 font-script text-lg font-extrabold text-[#2b141d] transform -rotate-2">
+              <!-- Hàng dưới: Khung Ban Biên Tập (Thiết kế & Biên tập) + Chữ ký tác giả -->
+              <div class="w-full flex items-center justify-between gap-2 pl-12 pr-1 pt-1">
+                <div class="sticky-note-card bg-[#fff9db] border border-amber-300 px-2.5 py-1 text-[10px] text-[#432818] shadow-sm transform -rotate-1 flex flex-col gap-0.5">
+                  <div class="push-pin-3d push-pin-gold"></div>
+                  <div>🎨 <strong>Thiết kế:</strong> <a href="https://fb.com/htl165" target="_blank" rel="noopener noreferrer" class="text-[#9e2a2b] font-bold hover:underline">Thanh Long ❤️‍🩹</a></div>
+                  <div>📝 <strong>Biên tập:</strong> <span class="font-bold text-[#7c2d12]">Mai Trang</span></div>
+                </div>
+                <span class="inline-block bg-white px-3.5 py-0.5 rounded-full shadow-md border-2 border-rose-200 font-script text-lg font-extrabold text-[#2b141d] transform -rotate-2">
                   ✒️ Nguyễn Hữu Công
                 </span>
               </div>
@@ -2535,7 +2540,7 @@
         `
       },
 
-      // ================= TRANG 7 (PHẢI): MỤC 4 — VĂN XUÔI: CHUYẾN ĐÒ TRI ÂN (GIỐNG ẢNH MẪU image_f1df5c.jpg) =================
+      // ================= TRANG 7 (PHẢI): MỤC 4 — VĂN XUÔI: CHUYẾN ĐÒ TRI ÂN (CHỮ 'tri ân' TO ĐỀU + KHUNG NỘI DUNG & HÌNH ẢNH) =================
       {
         number: 7,
         title: "4. Văn Xuôi: Chuyến Đò Tri Ân (Trịnh Thị Bình 12c4)",
@@ -2544,7 +2549,7 @@
           <div class="page-inner relative splatter-green-bg overflow-hidden" style="padding: 10px 14px 14px 24px;">
             <div class="spiral-edge-strip"></div>
 
-            <!-- Tiêu đề 'Chuyến đò tri ân' kẻ khung xanh lá trên giấy ô ly cắt nổi giống hệt ảnh mẫu image_f1df5c.jpg -->
+            <!-- Tiêu đề 'Chuyến đò tri ân' (Chữ 'tri ân' được phóng to đều bằng với chữ 'ngày' bên trang 6) -->
             <div class="text-center mt-0.5 relative z-20">
               <div class="stepped-grid-poem inline-block px-5 py-1 rounded-[24px] transform rotate-1 relative">
                 <div class="border-2 border-[#3b6e28] rounded-xl px-4 py-0.5 relative">
@@ -2552,31 +2557,37 @@
                         style="color: #2f5e1e; text-shadow: 2px 2px 0px #b2d89c;">
                     Chuyến đò
                   </span>
-                  <span class="block font-script text-base font-bold text-[#3b6e28] -mt-2 text-right pr-1">
+                  <span class="block font-script text-2xl sm:text-3xl font-extrabold text-[#3b6e28] -mt-1.5 text-right pr-1">
                     — tri ân —
                   </span>
                 </div>
               </div>
             </div>
 
-            <!-- 2 Đoạn văn xuôi cắt viền bậc thang trên nền giấy ô ly giống hệt ảnh mẫu image_f1df5c.jpg -->
+            <!-- 2 Đoạn văn xuôi cắt viền bậc thang với cỡ chữ lớn hơn, dòng kẻ ngang 22px rõ nét -->
             <div class="my-auto space-y-2 py-1 relative z-20">
-              <div class="stepped-grid-poem p-2.5 text-[11px] sm:text-[11.4px] leading-[1.42] font-editorial text-justify text-[#1b2618] transform -rotate-0.5">
+              <div class="stepped-grid-poem p-2.5 text-[12.2px] sm:text-[12.6px] leading-[22px] font-editorial text-justify text-[#1b2618] transform -rotate-0.5">
                 <p class="indent-4">
                   Là một người con Việt Nam, chúng ta biết rằng mảnh đất hình chữ S này luôn mang đậm bản sắc dân tộc mà ai trong số chúng ta cũng không được phép quên đi. Sự tri ân thầy cô cũng như thế, cũng đã cùng ta vượt qua những năm tháng lịch sử khó phai. Nếu như mỗi năm học là một chuyến đò, thì học trò là khách qua sông còn thầy cô là những người lái đò thầm lặng đưa con đò ấy đến bến bờ tri thức. Hằng năm, cứ mỗi độ thu qua, giữa cái tiết trời se lạnh khi chớm đông chúng ta lại có dịp để nói những lời tri ân sâu sắc đến người dẫn lối thầm lặng.
                 </p>
               </div>
 
-              <div class="stepped-grid-poem p-2.5 text-[11px] sm:text-[11.4px] leading-[1.42] font-editorial text-justify text-[#1b2618] transform rotate-0.5">
+              <div class="stepped-grid-poem p-2.5 text-[12.2px] sm:text-[12.6px] leading-[22px] font-editorial text-justify text-[#1b2618] transform rotate-0.5">
                 <p class="indent-4">
                   Thầy cô – hai tiếng gọi thiêng liêng mà bao thế hệ học trò luôn kính trọng và yêu mến. Kể làm sao xiết muôn vàn tâm huyết chứa đựng trong từng bài giảng của người nghệ sĩ cầm phấn nơi bục giảng! Dẫu biết mỗi chuyến đò đều là một hành trình đầy gian truân và vất vả, thế nhưng những người thuyền trưởng ấy chẳng bỏ mái chèo giữa chừng mà rời đi, luôn luôn là người cùng chúng ta vượt qua những khó khăn, thử thách mà không một lời phàn nàn.
                 </p>
                 <p class="indent-4 mt-1">
-                  Trong chặng hành trình rực rỡ dưới mái trường <strong>THPT Thiệu Hóa</strong> này đây, chỉ một lời cảm ơn suông là không đủ, tập thể <strong>12C4</strong> luôn muốn gửi vạn lời tri ân vì thầy cô đã chọn nghề cao quý này để đem lại tri thức và chắp cánh ước mơ cho thế hệ học trò. Nhân dịp ngày Nhà giáo Việt Nam 20-11, từ tận đáy lòng chúng em xin kính chúc những người lái đò luôn có thật nhiều sức khỏe để tiếp tục dìu dắt chúng em cập bến an toàn!
+                  Trong chặng hành trình rực rỡ dưới mái trường <strong>THPT Thiệu Hóa</strong> này đây, tập thể <strong>12C4</strong> luôn muốn gửi vạn lời tri ân vì thầy cô đã chọn nghề cao quý này để đem lại tri thức và chắp cánh ước mơ cho thế hệ học trò!
                 </p>
               </div>
 
-              <div class="text-right pr-1">
+              <!-- Hàng dưới: Khung Ban Biên Tập (Nội dung & Hình ảnh) + Chữ ký tác giả -->
+              <div class="flex items-center justify-between gap-2 pt-0.5 pr-1">
+                <div class="sticky-note-card bg-[#d8f3dc] border border-emerald-400 px-2.5 py-1 text-[10px] text-[#0b4619] shadow-sm transform rotate-1 flex flex-col gap-0.5">
+                  <div class="push-pin-3d push-pin-teal"></div>
+                  <div>📖 <strong>Nội dung:</strong> <span class="font-bold text-[#1b4332]">Huyền Trang</span></div>
+                  <div>📸 <strong>Hình ảnh:</strong> <span class="font-bold text-[#1b4332]">Ánh Tuyết</span></div>
+                </div>
                 <span class="inline-block bg-white px-4 py-0.5 rounded-full shadow-md border border-emerald-300 font-script text-base font-extrabold text-[#1b2e16] transform -rotate-1">
                   ✒️ Trịnh Thị Bình 12c4
                 </span>
@@ -2617,15 +2628,15 @@
               </svg>
             </div>
 
-            <!-- 5 Mảnh giấy ô vuông cắt bậc thang + Họa tiết truyền thống (Cuốn thư tre, Hoa sen, Bút lông nghiên mực, Ấm trà cổ, Đồng hồ, Chim sẻ, Nấm) -->
+            <!-- 5 Mảnh giấy ô vuông cắt bậc thang + Họa tiết truyền thống (Phóng to chữ Ca Dao rõ nét) -->
             <div class="my-auto space-y-2 relative z-20 py-0.5">
               <!-- Mảnh 1 (Trái) + Đồng hồ cổ & Cuốn thư tre Bút lông bên phải -->
               <div class="flex items-center justify-between gap-1.5">
-                <div class="stepped-grid-poem px-3 py-1.5 transform -rotate-2 max-w-[74%] relative">
+                <div class="stepped-grid-poem px-3 py-1.5 transform -rotate-2 max-w-[75%] relative">
                   <svg width="36" height="36" viewBox="-24 -24 48 48" class="absolute -left-4 -top-3 drop-shadow">
                     <use href="#vintage-pocket-watch" />
                   </svg>
-                  <p class="font-script text-[15px] font-bold text-[#1f1612] leading-snug pl-3">
+                  <p class="font-script text-[16px] sm:text-[16.5px] font-bold text-[#1f1612] leading-[22px] pl-3">
                     “Cơm cha, áo mẹ, chữ thầy<br/>Nghĩ sao cho bõ những ngày ước mong.”
                   </p>
                 </div>
@@ -2650,8 +2661,8 @@
                     <span class="text-[6px] font-mono text-amber-900">TRÀ ĐẠO</span>
                   </div>
                 </div>
-                <div class="stepped-grid-poem px-3 py-1.5 transform rotate-2 max-w-[72%]">
-                  <p class="font-script text-[14.2px] font-bold text-[#1f1612] leading-snug">
+                <div class="stepped-grid-poem px-3 py-1.5 transform rotate-2 max-w-[74%]">
+                  <p class="font-script text-[15.2px] sm:text-[15.8px] font-bold text-[#1f1612] leading-[22px]">
                     “Dạy con từ thuở tiểu sinh<br/>Gần thầy gần bạn tập tành lễ nghi<br/>Học cho “cách vật trí tri”<br/>Văn chương chữ nghĩa nghề gì cũng thông.”
                   </p>
                 </div>
@@ -2659,9 +2670,9 @@
 
               <!-- Mảnh 3 (Trái) + Chồng sách cổ, Đèn lồng & Lá phong thu bên phải -->
               <div class="flex items-center justify-between gap-1.5">
-                <div class="stepped-grid-poem px-3 py-1.5 transform -rotate-1 max-w-[72%] relative">
+                <div class="stepped-grid-poem px-3 py-1.5 transform -rotate-1 max-w-[74%] relative">
                   <div class="washi-tape -top-2 right-4 w-12 h-3"></div>
-                  <p class="font-script text-[15px] font-bold text-[#1f1612] leading-snug">
+                  <p class="font-script text-[16px] sm:text-[16.5px] font-bold text-[#1f1612] leading-[22px]">
                     “Học là học biết giữ giàng<br/>Biết điều nhân nghĩa biết đàng hiếu trung.”
                   </p>
                 </div>
@@ -2682,8 +2693,8 @@
                     <span class="text-[6px] font-mono text-stone-600">TRI KỶ</span>
                   </div>
                 </div>
-                <div class="stepped-grid-poem px-3 py-1.5 transform rotate-1.5 max-w-[72%]">
-                  <p class="font-script text-[15px] font-bold text-[#1f1612] leading-snug">
+                <div class="stepped-grid-poem px-3 py-1.5 transform rotate-1.5 max-w-[74%]">
+                  <p class="font-script text-[16px] sm:text-[16.5px] font-bold text-[#1f1612] leading-[22px]">
                     “Bạn bè là nghĩa tương tri<br/>Sao cho sau trước một bờ mới nên.”
                   </p>
                 </div>
@@ -2691,11 +2702,11 @@
 
               <!-- Mảnh 5 (Trái dưới) + Chim sẻ đậu cành hoa + Nấm rừng góc dưới phải -->
               <div class="flex items-center justify-between gap-1.5">
-                <div class="stepped-grid-poem px-3 py-1.5 transform -rotate-1 max-w-[73%] relative">
+                <div class="stepped-grid-poem px-3 py-1.5 transform -rotate-1 max-w-[75%] relative">
                   <svg width="40" height="30" viewBox="-26 -18 52 38" class="absolute -top-4 left-1 drop-shadow">
                     <use href="#vintage-bird-branch" />
                   </svg>
-                  <p class="font-script text-[15px] font-bold text-[#1f1612] leading-snug pt-1">
+                  <p class="font-script text-[16px] sm:text-[16.5px] font-bold text-[#1f1612] leading-[22px] pt-1">
                     “Ăn quả nhớ kẻ trồng cây<br/>Có danh có vọng nhớ thầy khi xưa.”
                   </p>
                 </div>
@@ -3243,7 +3254,7 @@
             </div>
 
             <!-- Bài thơ Lời Hẹn Ngày Gặp Lại + Các họa tiết Thuyền buồm, Đồng hồ cổ, Hoa hồng & Thuyền giấy ước mơ xung quanh -->
-            <div class="my-auto relative z-20 flex flex-col items-center py-1">
+            <div class="my-auto relative z-20 flex flex-col items-center py-0.5">
               <!-- Tem thuyền buồm bên trái -->
               <div class="absolute left-0.5 top-1/3 z-20 bg-[#2b3a4a] text-amber-100 p-1.5 rounded border-2 border-dashed border-white shadow-md transform -rotate-6 text-center">
                 <span class="text-base block leading-none">⛵</span>
@@ -3258,7 +3269,7 @@
                 <use href="#vintage-rose" transform="scale(0.65)" />
               </svg>
 
-              <div class="flex flex-col items-center font-editorial text-[12px] sm:text-[12.4px] leading-[1.45] text-[#14261c] filter drop-shadow-[0_4px_6px_rgba(20,50,30,0.16)]">
+              <div class="flex flex-col items-center font-editorial text-[13px] sm:text-[13.5px] text-[#14261c] filter drop-shadow-[0_4px_6px_rgba(20,50,30,0.16)]">
                 <span class="grid-line-strip">Bạn bè chung lớp bên nhau,</span>
                 <span class="grid-line-strip">Cùng qua năm tháng nặng sâu nghĩa tình.</span>
                 <span class="grid-line-strip">Thương nhau sách vở cùng mình,</span>
@@ -3323,7 +3334,7 @@
             </div>
 
             <!-- Lưới Ảnh Tập Thể 12C4 Ghim Đinh 3D (Click để Zoom In / Zoom Out mượt mà) -->
-            <div class="grid grid-cols-2 gap-2.5 my-auto py-0.5 relative z-20">
+            <div class="grid grid-cols-2 gap-2.5 items-start my-auto py-0.5 relative z-20">
               <!-- Tấm ảnh ghim 1 (Ảnh lớn tập thể cả lớp 12C4) -->
               <div
                 onclick="openPhotoZoomModal(this, event)"
@@ -3336,7 +3347,7 @@
                 <img
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang12.1.jpg"
                   alt="Ảnh Tập Thể 12C4"
-                  class="w-full h-30 sm:h-32 object-cover rounded-xs border border-stone-200"
+                  class="w-full h-36 sm:h-40 object-cover rounded-xs border border-stone-200"
                 />
                 <div class="flex items-center justify-between mt-1 px-1">
                   <span class="font-editorial text-sm font-bold text-[#2c1e16]">📸 Tập thể 12C4 bên Thầy Cô kính yêu</span>
@@ -3351,15 +3362,15 @@
               <div
                 onclick="openPhotoZoomModal(this, event)"
                 data-caption="🌻 Những Kỉ Niệm 20/11 của tập thể 12C4"
-                class="zoomable-photo-card sticky-note-card bg-[#fff9db] border border-amber-300/80 p-2 transform rotate-2"
+                class="zoomable-photo-card sticky-note-card self-start bg-[#fff9db] border border-amber-300/80 p-1.5 pb-2 transform rotate-2"
               >
                 <div class="push-pin-3d push-pin-gold"></div>
                 <img
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang12.2.jpg"
                   alt="Những Kỉ Niệm 20/11"
-                  class="w-full h-22 object-cover rounded-xs border border-amber-200 mt-1"
+                  class="w-full h-28 sm:h-32 object-cover rounded-xs border border-amber-200 mt-0.5"
                 />
-                <p class="font-hand text-[11px] font-bold text-center text-[#432818] mt-1">
+                <p class="font-hand text-[11px] font-bold text-center text-[#432818] mt-1 leading-tight">
                   🌻 Những Kỉ Niệm 20/11
                 </p>
               </div>
@@ -3368,15 +3379,15 @@
               <div
                 onclick="openPhotoZoomModal(this, event)"
                 data-caption="💐 Nụ cười rạng rỡ ngày hội 20/11 của Chi đoàn 12C4"
-                class="zoomable-photo-card sticky-note-card bg-[#ffdeeb] border border-rose-300/80 p-2 transform -rotate-2"
+                class="zoomable-photo-card sticky-note-card self-start bg-[#ffdeeb] border border-rose-300/80 p-1.5 pb-2 transform -rotate-2"
               >
                 <div class="push-pin-3d push-pin-teal"></div>
                 <img
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang12.3.jpg"
                   alt="Chào mừng 20/11 12C4"
-                  class="w-full h-22 object-cover rounded-xs border border-rose-200 mt-1"
+                  class="w-full h-28 sm:h-32 object-cover rounded-xs border border-rose-200 mt-0.5"
                 />
-                <p class="font-hand text-[11px] font-bold text-center text-[#590d22] mt-1">
+                <p class="font-hand text-[11px] font-bold text-center text-[#590d22] mt-1 leading-tight">
                   💐 Nụ cười ngày hội 20/11
                 </p>
               </div>
@@ -3384,7 +3395,7 @@
               <!-- Giấy nhớ ghi chú chung -->
               <div class="col-span-2 sticky-note-card bg-[#d3f9d8] border border-emerald-300 p-2 transform -rotate-0.5 flex items-center justify-between">
                 <div class="push-pin-3d"></div>
-                <p class="font-hand text-[11px] text-[#0b4619] leading-tight pl-1">
+                <p class="font-hand text-[10.5px] text-[#0b4619] leading-tight pl-1">
                   📝 <strong>Nhật ký ảnh 12C4:</strong> Từng tấm hình ghim trên bảng là một kỷ niệm vô giá dưới mái trường THPT Thiệu Hóa.
                 </p>
               </div>
@@ -3414,20 +3425,20 @@
             </svg>
 
             <!-- Lưới Khung Ảnh Giấy Nhớ & Polaroid Tập Thể 12C4 (Click ảnh bất kỳ để Zoom lớn) -->
-            <div class="grid grid-cols-2 gap-2.5 my-auto py-1 relative z-20">
+            <div class="grid grid-cols-2 gap-2.5 items-start my-auto py-1 relative z-20">
               <!-- Tấm ảnh ghim 4 -->
               <div
                 onclick="openPhotoZoomModal(this, event)"
                 data-caption="🔥 Lửa trại & Sức trẻ Đoàn viên 12C4 rực cháy"
-                class="zoomable-photo-card sticky-note-card bg-[#e0fbfc] border border-sky-300 p-2 transform -rotate-2"
+                class="zoomable-photo-card sticky-note-card self-start bg-[#e0fbfc] border border-sky-300 p-1.5 pb-2 transform -rotate-2"
               >
                 <div class="push-pin-3d"></div>
                 <img
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang13.1.jpg"
                   alt="Hội trại 12C4"
-                  class="w-full h-22 object-cover rounded-xs border border-sky-200 mt-1"
+                  class="w-full h-28 sm:h-32 object-cover rounded-xs border border-sky-200 mt-0.5"
                 />
-                <p class="font-hand text-[11px] font-bold text-center text-sky-950 mt-1">
+                <p class="font-hand text-[11px] font-bold text-center text-sky-950 mt-1 leading-tight">
                   🔥 Lửa trại & Sức trẻ Đoàn viên 12C4
                 </p>
               </div>
@@ -3436,15 +3447,15 @@
               <div
                 onclick="openPhotoZoomModal(this, event)"
                 data-caption="🎸 Phút ngẫu hứng đàn hát giờ ra chơi của 12C4"
-                class="zoomable-photo-card sticky-note-card bg-[#fff3b0] border border-amber-300 p-2 transform rotate-2"
+                class="zoomable-photo-card sticky-note-card self-start bg-[#fff3b0] border border-amber-300 p-1.5 pb-2 transform rotate-2"
               >
                 <div class="push-pin-3d push-pin-gold"></div>
                 <img
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang13.2.jpg"
                   alt="Giờ ra chơi 12C4"
-                  class="w-full h-22 object-cover rounded-xs border border-amber-200 mt-1"
+                  class="w-full h-28 sm:h-32 object-cover rounded-xs border border-amber-200 mt-0.5"
                 />
-                <p class="font-hand text-[11px] font-bold text-center text-amber-950 mt-1">
+                <p class="font-hand text-[11px] font-bold text-center text-amber-950 mt-1 leading-tight">
                   🎸 Phút ngẫu hứng giờ ra chơi
                 </p>
               </div>
@@ -3462,7 +3473,7 @@
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang13..jpg"
                   onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang13.3.jpg';}"
                   alt="Kỷ yếu 12C4"
-                  class="w-full h-28 sm:h-30 object-cover rounded-xs border border-stone-200"
+                  class="w-full h-34 sm:h-36 object-cover rounded-xs border border-stone-200"
                 />
                 <div class="flex items-center justify-between mt-1 px-1">
                   <span class="font-editorial text-sm font-bold text-[#2c1e16]">✨ Chuyến tàu thanh xuân 12C4 — Mãi bên nhau!</span>
@@ -3470,17 +3481,17 @@
                 </div>
               </div>
 
-              <!-- 2 Giấy nhớ cảm xúc ở đáy (Đã bỏ nút lật sang trang tiếp theo yêu cầu) -->
-              <div class="sticky-note-card bg-[#f3d9fa] border border-purple-300 p-2 transform -rotate-1">
+              <!-- 2 Giấy nhớ cảm xúc ở đáy -->
+              <div class="sticky-note-card self-start h-fit bg-[#f3d9fa] border border-purple-300 p-2 transform -rotate-1">
                 <div class="push-pin-3d push-pin-gold"></div>
-                <p class="font-hand text-[10.8px] text-purple-950 leading-tight pt-1">
+                <p class="font-hand text-[10.2px] text-purple-950 leading-tight pt-0.5">
                   💜 <strong>Ký ức 12C4:</strong> “Sau này dù đi đâu, hãy nhớ chúng ta từng ngồi chung một mái lớp dưới bầu trời Thiệu Hóa!”
                 </p>
               </div>
 
-              <div class="sticky-note-card bg-[#ffe8cc] border border-orange-300 p-2 transform rotate-1">
+              <div class="sticky-note-card self-start h-fit bg-[#ffe8cc] border border-orange-300 p-2 transform rotate-1">
                 <div class="push-pin-3d"></div>
-                <p class="font-hand text-[10.8px] text-orange-950 leading-tight pt-1">
+                <p class="font-hand text-[10.2px] text-orange-950 leading-tight pt-0.5">
                   🌟 <strong>Lời hứa 12C4:</strong> “Cùng nhau nỗ lực hết mình và mỉm cười thật tươi trong ngày hội ngộ nhé!”
                 </p>
               </div>
@@ -3590,7 +3601,7 @@
             <!-- Gáy lò xo kim loại dọc mép trái -->
             <div class="spiral-edge-strip"></div>
 
-            <!-- LỚP NỀN COLLAGE BÁO CŨ, TEM PORTUGAL 22.50, TEM BIỂN CUBA 2.80 -->
+            <!-- LỚP NỀN COLLAGE BÁO CŨ -->
             <div class="absolute inset-1.5 pointer-events-none overflow-hidden rounded-lg">
               <div class="absolute top-1 left-4 bg-[#f8f5ec] p-1 border-2 border-dashed border-[#6e5a44] shadow-md w-22 transform -rotate-2 font-mono text-[6px] text-[#2b2118] text-center">
                 <div class="font-bold tracking-wider">PORTUGAL</div>
@@ -3609,7 +3620,7 @@
               </div>
             </div>
 
-            <!-- TIÊU ĐỀ 'Lời Kết' CHỮ NÂU VÀNG ÓNG 3D CẮT VIỀN GIẤY TRẮNG DÀY NỔI KHỐI Ở ĐỈNH TRANG -->
+            <!-- TIÊU ĐỀ 'Lời Kết' -->
             <div class="text-center relative z-30">
               <div class="inline-block bg-[#fffdf9] px-5 py-0.5 rounded-[30px_22px_32px_24px] shadow-[0_8px_16px_rgba(32,16,6,0.38),0_2.5px_0_#d8be94] border-[2.5px] border-white transform -rotate-1">
                 <svg viewBox="0 0 250 58" class="w-40 sm:w-44 h-10 mx-auto overflow-visible">
@@ -3627,8 +3638,8 @@
               </div>
             </div>
 
-            <!-- NỬA TRÊN: TỜ GIẤY VỞ KẺ Ô VUÔNG GHI LỜI KẾT CỠ CHỮ TO RÕ & HIỆU ỨNG CHẠY TỪNG CHỮ (TYPEWRITER) -->
-            <div class="stepped-grid-poem relative z-20 my-1 ml-2 mr-2 p-2.5 h-[44%] flex flex-col justify-between overflow-y-auto text-[#1a202c]">
+            <!-- NỬA TRÊN: LỜI KẾT TYPEWRITER -->
+            <div class="stepped-grid-poem relative z-20 my-1 ml-1.5 mr-1.5 p-2.5 h-[38%] flex flex-col justify-between overflow-y-auto text-[#1a202c]">
               <div class="flex items-center justify-between border-b border-slate-300/80 pb-0.5 mb-1 shrink-0">
                 <span class="font-script text-base font-bold text-[#3b1d0e]">✨ Lời kết tri ân</span>
                 <button
@@ -3638,38 +3649,42 @@
                   ↺ Đọc lại từ Bìa Trước
                 </button>
               </div>
-
-              <div class="loiket-typewriter-box font-editorial text-[13px] sm:text-[13.6px] leading-[1.45] text-justify text-[#1e1b18] font-medium my-auto pr-0.5"></div>
+              <div class="font-editorial text-[12.5px] sm:text-[13px] leading-[1.46] text-justify text-[#231710] flex-1 overflow-y-auto pr-1">
+                <span class="loiket-typewriter-box"></span>
+              </div>
+              <div class="text-right pt-1 border-t border-dashed border-slate-300 shrink-0">
+                <span class="font-script text-sm font-bold text-[#9e2a2b]">— Tập thể Chi đoàn 12C4 —</span>
+              </div>
             </div>
 
-            <!-- NỬA DƯỚI: KHUNG THƯỚC PHIM KỶ NIỆM 12C4 (TỰ ĐỘNG PHÁT VIDEO & HÒA ÂM NHẠC NỀN KHI MỞ TRANG 15) -->
-            <div class="relative z-20 ml-2 mr-2 mb-0.5 bg-[#fffdf9] p-2 rounded-xl shadow-[0_8px_18px_rgba(32,16,8,0.28)] border-2 border-white flex flex-col justify-between h-[41%]">
+            <!-- NỬA DƯỚI: KHUNG VIDEO HTML5 TRÀN FULL KHUNG HÌNH (Đã sửa lỗi nhúng YouTube bị chặn) -->
+            <div class="relative z-20 ml-1.5 mr-1.5 mb-0.5 bg-[#fffdf9] p-1.5 rounded-xl shadow-[0_8px_18px_rgba(32,16,8,0.28)] border-2 border-white flex flex-col justify-between h-[44%]">
               <div class="push-pin-3d push-pin-gold"></div>
               <div class="washi-tape -top-2.5 left-6 -rotate-3 w-16 h-3.5"></div>
               <div class="washi-tape washi-rose -top-2.5 right-6 rotate-3 w-16 h-3.5"></div>
 
-              <div class="flex items-center justify-between px-1 mb-1">
+              <div class="flex items-center justify-between px-1 mb-1 shrink-0">
                 <span class="font-editorial text-xs font-bold text-[#7c1d1d] flex items-center gap-1">
                   <i class="fa-solid fa-film text-amber-600"></i> Thước Phim Kỷ Niệm Chi Đoàn 12C4
                 </span>
-                <span class="font-mono text-[8px] font-bold bg-amber-100 text-amber-900 px-1.5 py-0.5 rounded-full border border-amber-300">
-                  🎬 Tự động phát
+                <span class="font-mono text-[8px] font-bold bg-rose-100 text-rose-900 px-1.5 py-0.5 rounded-full border border-rose-300">
+                  ▶️ Video HD
                 </span>
               </div>
 
-              <div class="relative w-full flex-1 rounded-lg overflow-hidden bg-black border border-stone-300 shadow-inner flex items-center justify-center">
+              <div class="relative w-full flex-1 rounded-lg overflow-hidden bg-black border border-stone-300 shadow-inner">
                 <video
-                  class="loiket-video-player w-full h-full max-h-[155px] object-contain bg-black"
+                  class="loiket-html5-video w-full h-full object-cover block"
                   src="https://github.com/porccht/T-p-San-12C4/raw/main/tlong12c4/trang15.mp4"
-                  playsinline
                   controls
+                  playsinline
                   preload="metadata"
                 ></video>
               </div>
             </div>
 
             <div class="page-footer-bar relative z-30 pl-2">
-              <span>Mục 12: Lời Kết Tập San 12C4 — Thanh Long ❤️‍🩹</span>
+              <span>Mục 12: Lời Kết Tập San 12C4 — Code bởi <a href="https://fb.com/htl165" target="_blank" rel="noopener noreferrer" class="font-bold text-[#9e2a2b] hover:underline">Thanh Long ❤️‍🩹</a></span>
               <span class="font-bold text-[#9e2a2b]">Trang 15 (Hết)</span>
             </div>
             <div class="corner-curl-hint"></div>
@@ -3679,76 +3694,22 @@
     ];
 
     /***************************************************************************
-     * 2. STATE & 3D FLIPBOOK ENGINE (15 TRANG - KẾT THÚC Ở MẶT MỞ TRANG 14 LƯU BÚT & TRANG 15 LỜI KẾT, ĐÃ XÓA BÌA CUỐI)
+     * STATE MANAGEMENT & 15-PAGE ENGINE
      ***************************************************************************/
-    const TOTAL_PAGES = PAGES_DATA.length; // 15 pages (No back cover)
-    const TOTAL_SHEETS = Math.ceil(TOTAL_PAGES / 2); // 8 sheets total, max flipped on desktop = 7 (shows Page 14 Left & Page 15 Right)
-    const MAX_DESKTOP_FLIPPED = 7;
-
-    let currentPageNumber = 1;
+    let currentPageNumber = 1; // 1 to 15
     let isMobileMode = window.innerWidth <= 920;
     let isMusicPlaying = true;
-    let isBuiPhanPlaying = false;
     let isFlipSfxEnabled = true;
     let audioContext = null;
 
-    // Danh sách Lưu Bút được lưu trực tiếp trên Trang 14 & tự động căn chỉnh kích thước giấy nhớ
     const SAVED_WISHES = [
-      {
-        sender: "Thanh Long ❤️‍🩹",
-        message: "Chúc quý thầy cô trường THPT Thiệu Hóa luôn mạnh khỏe, hạnh phúc và giữ mãi ngọn lửa nhiệt huyết trên bục giảng!",
-        color: "bg-[#fff3b0] border-amber-300",
-        rot: "-1.4deg",
-        pin: ""
-      },
-      {
-        sender: "Tập thể Chi đoàn 12C4",
-        message: "Cảm ơn thầy cô đã luôn kiên nhẫn, bao dung và dìu dắt tập thể 12C4 suốt những năm tháng thanh xuân tươi đẹp nhất!",
-        color: "bg-[#ffd6e0] border-rose-300",
-        rot: "1.3deg",
-        pin: "push-pin-gold"
-      },
-      {
-        sender: "Hoàng Đình Tuấn Anh",
-        message: "Dù mai này mỗi đứa một phương trời, chúng mình sẽ mãi nhớ từng góc sân, hàng cây và tiếng cười của lớp 12C4 nhé!",
-        color: "bg-[#d8f3dc] border-emerald-300",
-        rot: "0.8deg",
-        pin: "push-pin-teal"
-      },
-      {
-        sender: "Quản Hữu Trung Tình",
-        message: "Chúc 12C4 tất cả cùng đỗ nguyện vọng 1 và hẹn gặp lại nhau ở đỉnh vinh quang rực rỡ nhất!",
-        color: "bg-[#e0fbfc] border-sky-300",
-        rot: "-1deg",
-        pin: ""
-      }
+      { sender: "Thanh Long ❤️‍🩹", message: "Chúc quý thầy cô luôn mạnh khỏe, hạnh phúc và giữ mãi ngọn lửa nhiệt huyết với sự nghiệp trồng người!", color: "bg-[#fff3b0] border-amber-300" },
+      { sender: "Chi đoàn 12C4", message: "Cảm ơn thầy cô đã luôn kiên nhẫn dìu dắt, bao dung và tiếp lửa cho chúng em nên người!", color: "bg-[#ffd6e0] border-rose-300" },
+      { sender: "Nguyễn Hữu Công", message: "Mỗi bài giảng của thầy cô là một hạt mầm tri thức gieo vào tâm hồn chúng em. Tri ân thầy cô sâu sắc!", color: "bg-[#d8f3dc] border-emerald-300" },
+      { sender: "Trịnh Thị Bình", message: "Hẹn gặp lại nhau ở đỉnh vinh quang! Mãi tự hào là học trò dưới mái trường THPT Thiệu Hóa thân yêu.", color: "bg-[#e0fbfc] border-sky-300" }
     ];
 
-    function renderAndAutoFitWishes() {
-      const walls = document.querySelectorAll('.wishes-wall-container');
-      const badges = document.querySelectorAll('.wishes-count-badge');
-      const count = SAVED_WISHES.length;
-
-      badges.forEach((b) => {
-        b.textContent = `📌 ${count} giấy nhớ`;
-      });
-
-      // Tự động điều chỉnh số cột và cỡ chữ khi có nhiều giấy nhớ mới
-      const gridColsClass = count > 6 ? 'grid-cols-3 gap-1.5' : 'grid-cols-2 gap-2';
-      const textSizeClass = count > 8 ? 'text-[9px]' : (count > 4 ? 'text-[10px]' : 'text-[10.8px]');
-      const padClass = count > 6 ? 'p-1.5' : 'p-2';
-
-      walls.forEach((wall) => {
-        wall.className = `wishes-wall-container grid ${gridColsClass} my-1 flex-1 content-start overflow-y-auto pr-0.5 pt-1 relative z-20`;
-        wall.innerHTML = SAVED_WISHES.map((w) => `
-          <div class="sticky-note-card ${w.color} border ${padClass} ${textSizeClass} text-[#2c1e16]" style="transform: rotate(${w.rot});">
-            <div class="push-pin-3d ${w.pin}"></div>
-            <p class="leading-snug pt-1">“${w.message}”</p>
-            <p class="text-[9px] font-bold text-[#9e2a2b] mt-1 text-right">— ${w.sender}</p>
-          </div>
-        `).join('');
-      });
-    }
+    const LOI_KET_FULL_TEXT = "Hôm nay, trong không khí ấm áp và trang trọng của ngày Nhà giáo Việt Nam 20-11, chúng em xin dành sự biết ơn chân thành nhất đến thầy cô – những người đã gieo mầm tri thức và định hướng ước mơ cho chúng em. Nhìn lại hành trình học tập của mình, chúng em không thể nào quên được hình ảnh người thầy, người cô tận tụy, luôn sẵn sàng lắng nghe và chia sẻ với chúng em. Mỗi bài giảng của thầy cô không chỉ là những kiến thức đơn thuần mà còn là những câu chuyện đầy cảm hứng, là những bài học quý giá về cách sống, lòng kiên trì và sự đam mê. Thầy cô không chỉ là người dạy chúng em cách giải phương trình hay phân tích tác phẩm văn học, mà còn là những người dẫn lối chúng em trên con đường trở thành những con người tốt đẹp, cống hiến cho xã hội, cho đất nước. Chúng em biết và hiểu rằng, mỗi lời động viên, mỗi cái gạt đầu gồ từ thầy cô như những ngọn lửa thắp sáng những ước mơ, hoài bão, khát vọng của tuổi trẻ trong chúng em. Nhờ có thầy cô, chúng em đã có thêm sức mạnh để vượt qua những khó khăn, thử thách, mạnh mẽ đứng dậy sau những vấp ngã, dám theo đuổi ước mơ và sống hết mình với nó. Trong hành trang bước vào cuộc đời, những gì thầy cô đã chỉ bảo sẽ mãi là kim chỉ nam, là ngọn hải đăng dẫn lối cho chúng em. Nhân ngày 20-11, chúng em xin chúc thầy cô luôn dồi dào sức khỏe, hạnh phúc và tiếp tục gặt hái thêm nhiều thành công trong sự nghiệp trồng người cao cả. Chúng em sẽ luôn nhớ về thầy cô với lòng biết ơn vô bờ bến. Cảm ơn thầy cô vì tất cả!";
 
     function buildFlipbookDOM() {
       const desktopRoot = document.getElementById('desktop-sheets-root');
@@ -3761,9 +3722,12 @@
       dotsRoot.innerHTML = '';
       tocGrid.innerHTML = '';
 
-      for (let s = 0; s < TOTAL_SHEETS; s++) {
-        const frontData = PAGES_DATA[s * 2];
-        const backData = PAGES_DATA[s * 2 + 1];
+      // Desktop has 8 physical sheets (0..7). Sheet 7 has back as empty or cover back
+      for (let s = 0; s < 8; s++) {
+        const frontIdx = s * 2;
+        const backIdx = s * 2 + 1;
+        const frontData = PAGES_DATA[frontIdx] || { number: frontIdx + 1, title: "", badge: "", html: "" };
+        const backData = PAGES_DATA[backIdx] || { number: backIdx + 1, title: "", badge: "", html: `<div class="page-inner flex items-center justify-center font-editorial text-xl text-stone-500">Bìa Sau / Hết</div>` };
 
         const sheetEl = document.createElement('div');
         sheetEl.className = 'book-sheet';
@@ -3773,11 +3737,11 @@
         sheetEl.innerHTML = `
           <div class="sheet-face sheet-front" onclick="handleDesktopSheetClick(${s}, 'front', event)">
             <div class="page-turn-lighting"></div>
-            ${frontData ? frontData.html : ''}
+            ${frontData.html}
           </div>
           <div class="sheet-face sheet-back" onclick="handleDesktopSheetClick(${s}, 'back', event)">
             <div class="page-turn-lighting"></div>
-            ${backData ? backData.html : '<div class="page-inner cover-luxury"></div>'}
+            ${backData.html}
           </div>
         `;
         desktopRoot.appendChild(sheetEl);
@@ -3791,7 +3755,7 @@
         mobileRoot.appendChild(cardEl);
 
         const dotBtn = document.createElement('button');
-        dotBtn.className = 'w-2 h-2 rounded-full transition-all duration-300 bg-white/35 hover:bg-amber-300';
+        dotBtn.className = 'w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/35 hover:bg-amber-300';
         dotBtn.id = `nav-dot-${page.number}`;
         dotBtn.title = `Trang ${page.number}: ${page.title}`;
         dotBtn.onclick = (e) => {
@@ -3799,208 +3763,16 @@
           jumpToPage(page.number);
         };
         dotsRoot.appendChild(dotBtn);
-
-        const tocItem = document.createElement('button');
-        tocItem.className = 'flex items-center justify-between p-2.5 rounded-2xl bg-white/10 hover:bg-amber-400/25 border border-white/15 transition text-left group';
-        tocItem.onclick = () => {
-          jumpToPage(page.number);
-          toggleTocModal();
-        };
-        tocItem.innerHTML = `
-          <div class="flex items-center gap-2.5 min-w-0">
-            <span class="w-7 h-7 rounded-xl bg-amber-400/20 border border-amber-300/40 text-amber-300 font-bold text-xs flex items-center justify-center shrink-0">
-              ${String(page.number).padStart(2, '0')}
-            </span>
-            <div class="truncate">
-              <p class="text-xs sm:text-sm font-semibold text-white group-hover:text-amber-200 truncate">${page.title}</p>
-              <span class="text-[10px] text-amber-200/75">${page.badge}</span>
-            </div>
-          </div>
-          <i class="fa-solid fa-arrow-right text-xs text-amber-300/70 group-hover:translate-x-1 transition"></i>
-        `;
-        tocGrid.appendChild(tocItem);
       });
 
-      renderAndAutoFitWishes();
+      renderWishesWall();
       syncBookVisualState(false);
     }
 
     function getDesktopFlippedCountFromPage(pageNum) {
       if (pageNum <= 1) return 0;
-      return Math.min(MAX_DESKTOP_FLIPPED, Math.floor(pageNum / 2));
-    }
-
-    // Nội dung Lời Kết dùng cho hiệu ứng chữ chạy từng chữ (Typewriter) ở Trang 15
-    const LOI_KET_FULL_TEXT = "Hôm nay, trong không khí ấm áp và trang trọng của ngày Nhà giáo Việt Nam 20/11, chúng em xin dành sự biết ơn chân thành nhất đến thầy cô – những người đã gieo mầm tri thức và định hướng ước mơ cho chúng em. Mỗi bài giảng, mỗi lời động viên của thầy cô như ngọn lửa thắp sáng hoài bão tuổi trẻ, giúp chúng em mạnh mẽ vững bước trên đường đời. Nhân ngày 20/11, tập thể Chi đoàn 12C4 – THPT Thiệu Hóa kính chúc quý thầy cô luôn dồi dào sức khỏe, hạnh phúc và gặt hái nhiều thành công trong sự nghiệp trồng người cao cả. Cảm ơn thầy cô vì tất cả!";
-    let loiKetTypewriterTimer = null;
-    let wasOnLoiKetPage = false;
-
-    function startLoiKetTypewriter() {
-      const boxes = document.querySelectorAll('.loiket-typewriter-box');
-      if (!boxes.length) return;
-      if (loiKetTypewriterTimer) {
-        clearInterval(loiKetTypewriterTimer);
-        loiKetTypewriterTimer = null;
-      }
-
-      let charIndex = 0;
-      boxes.forEach((b) => { b.textContent = ''; });
-
-      loiKetTypewriterTimer = setInterval(() => {
-        charIndex += 2;
-        const currentSlice = LOI_KET_FULL_TEXT.slice(0, charIndex);
-        boxes.forEach((b) => {
-          b.textContent = currentSlice;
-          if (b.parentElement) {
-            b.parentElement.scrollTop = b.parentElement.scrollHeight;
-          }
-        });
-        if (charIndex >= LOI_KET_FULL_TEXT.length) {
-          clearInterval(loiKetTypewriterTimer);
-          loiKetTypewriterTimer = null;
-        }
-      }, 24);
-    }
-
-    // Tự động điều phối âm lượng nhạc nền, phát bài Bụi Phấn ở Trang 8-9 & tự phát Video + Chữ chạy ở Trang 15
-    function syncPageSpecificAudio(flippedCount) {
-      const bgAudio = document.getElementById('bg-audio-element');
-      const bpAudio = document.getElementById('buiphan-audio-element');
-      if (!bgAudio || !bpAudio) return;
-
-      const isOnBuiPhanPages = isMobileMode
-        ? (currentPageNumber === 8 || currentPageNumber === 9)
-        : (flippedCount === 4);
-
-      const isOnLoiKetPage = isMobileMode
-        ? (currentPageNumber === 15)
-        : (flippedCount === 7);
-
-      const desktopVideo = document.querySelector('#desktop-sheets-root .loiket-video-player');
-      const mobileVideo = document.querySelector('#mobile-pages-root .loiket-video-player');
-      const activeVideo = isMobileMode ? mobileVideo : desktopVideo;
-      const inactiveVideo = isMobileMode ? desktopVideo : mobileVideo;
-
-      if (inactiveVideo && !inactiveVideo.paused) {
-        inactiveVideo.pause();
-      }
-
-      if (isOnLoiKetPage) {
-        if (!wasOnLoiKetPage) {
-          wasOnLoiKetPage = true;
-          startLoiKetTypewriter();
-        }
-        if (activeVideo) {
-          activeVideo.muted = false;
-          activeVideo.volume = 0.95;
-          if (activeVideo.paused) {
-            activeVideo.play().catch(() => {});
-          }
-        }
-      } else {
-        wasOnLoiKetPage = false;
-        if (desktopVideo && !desktopVideo.paused) {
-          desktopVideo.pause();
-        }
-        if (mobileVideo && !mobileVideo.paused) {
-          mobileVideo.pause();
-        }
-      }
-
-      if (isOnBuiPhanPages) {
-        bgAudio.volume = 0.32;
-        if (isMusicPlaying && bgAudio.paused) {
-          bgAudio.play().catch(() => {});
-        }
-        if (!isBuiPhanPlaying) {
-          isBuiPhanPlaying = true;
-          bpAudio.volume = 0.62;
-          bpAudio.play().catch(() => {});
-          bpAudio.onended = () => {
-            isBuiPhanPlaying = false;
-          };
-        }
-      } else {
-        if (isBuiPhanPlaying || !bpAudio.paused) {
-          bpAudio.pause();
-          bpAudio.currentTime = 0;
-          isBuiPhanPlaying = false;
-        }
-        bgAudio.volume = isOnLoiKetPage ? 0.22 : 0.85;
-        if (isMusicPlaying && bgAudio.paused) {
-          bgAudio.play().catch(() => {});
-        }
-      }
-    }
-
-    // Hiệu ứng Phóng To / Thu Nhỏ (Zoom In / Zoom Out) khi nhấn vào ảnh trên Trang 4, 5, 10, 12, 13
-    let isZoomModalOpen = false;
-    function openPhotoZoomModal(cardEl, event) {
-      if (event) event.stopPropagation();
-      const overlay = document.getElementById('photo-zoom-overlay');
-      const zoomCard = document.getElementById('photo-zoom-card');
-      const zoomImg = document.getElementById('photo-zoom-img');
-      const zoomCaption = document.getElementById('photo-zoom-caption');
-      if (!overlay || !zoomCard || !zoomImg) return;
-
-      if (isZoomModalOpen) {
-        closePhotoZoomModal();
-        return;
-      }
-
-      const imgEl = cardEl.querySelector('img');
-      if (!imgEl) return;
-
-      zoomImg.src = imgEl.src;
-      zoomCaption.textContent = cardEl.dataset.caption || imgEl.alt || 'Kỷ niệm Chi đoàn 12C4';
-
-      overlay.classList.remove('opacity-0', 'invisible');
-      overlay.classList.add('opacity-100', 'visible');
-      zoomCard.classList.remove('scale-75');
-      zoomCard.classList.add('scale-100');
-      isZoomModalOpen = true;
-      playTributeChime();
-    }
-
-    function closePhotoZoomModal() {
-      const overlay = document.getElementById('photo-zoom-overlay');
-      const zoomCard = document.getElementById('photo-zoom-card');
-      if (!overlay || !zoomCard) return;
-
-      overlay.classList.add('opacity-0', 'invisible');
-      overlay.classList.remove('opacity-100', 'visible');
-      zoomCard.classList.add('scale-75');
-      zoomCard.classList.remove('scale-100');
-      isZoomModalOpen = false;
-    }
-
-    // Hiệu ứng kéo / bấm thanh PULL ↓ ở Trang 5 để xổ chuỗi ảnh kỷ niệm THPT Thiệu Hóa
-    let isPullDrawerOpen = false;
-    function togglePullDrawer(event) {
-      if (event) event.stopPropagation();
-      isPullDrawerOpen = !isPullDrawerOpen;
-      const drawers = document.querySelectorAll('#thieuhoa-pull-drawer');
-      const mainTexts = document.querySelectorAll('.pull-main-text');
-      const subTexts = document.querySelectorAll('.pull-sub-text');
-
-      drawers.forEach((d) => {
-        if (isPullDrawerOpen) {
-          d.classList.remove('max-h-0');
-          d.classList.add('max-h-[380px]', 'py-1.5');
-        } else {
-          d.classList.add('max-h-0');
-          d.classList.remove('max-h-[380px]', 'py-1.5');
-        }
-      });
-
-      mainTexts.forEach((t) => {
-        t.textContent = isPullDrawerOpen ? 'PUSH ↑' : 'PULL ↓';
-      });
-      subTexts.forEach((s) => {
-        s.textContent = isPullDrawerOpen ? '(thu gọn lại) ♡' : '(kéo xuống) nhẹ tay ♡';
-      });
-
-      playRealisticPaperFlipSound();
+      if (pageNum >= 15) return 7;
+      return Math.floor((pageNum - 1) / 2);
     }
 
     function syncBookVisualState(playSound = true) {
@@ -4008,6 +3780,41 @@
 
       if (playSound && isFlipSfxEnabled) {
         playRealisticPaperFlipSound();
+      }
+
+      // Audio trigger for Bụi Phấn (Trang 8 & 9)
+      const bgAudio = document.getElementById('bg-audio-element');
+      const buiphanAudio = document.getElementById('buiphan-audio-element');
+
+      if (currentPageNumber === 8 || currentPageNumber === 9) {
+        if (bgAudio) bgAudio.volume = 0.32;
+        if (buiphanAudio && buiphanAudio.paused && isMusicPlaying) {
+          buiphanAudio.currentTime = 0;
+          buiphanAudio.play().catch(() => {});
+        }
+      } else {
+        if (bgAudio) bgAudio.volume = 0.85;
+        if (buiphanAudio && !buiphanAudio.paused) {
+          buiphanAudio.pause();
+        }
+      }
+
+      // HTML5 Video Trigger for Trang 15
+      document.querySelectorAll('.loiket-html5-video').forEach((vid) => {
+        if (currentPageNumber === 15) {
+          if (vid.paused && isMusicPlaying) {
+            vid.play().catch(() => {});
+          }
+        } else {
+          if (!vid.paused) {
+            vid.pause();
+          }
+        }
+      });
+
+      // Typewriter trigger for Trang 15
+      if (currentPageNumber === 15) {
+        startLoiKetTypewriter();
       }
 
       const flippedCount = getDesktopFlippedCountFromPage(currentPageNumber);
@@ -4020,13 +3827,17 @@
         desktopBook.classList.add('closed-front');
         stackLeft.style.opacity = '0';
         stackRight.style.opacity = '1';
+      } else if (flippedCount >= 7) {
+        desktopBook.classList.add('closed-back');
+        stackLeft.style.opacity = '1';
+        stackRight.style.opacity = '0';
       } else {
         desktopBook.classList.add('open-spread');
         stackLeft.style.opacity = '1';
         stackRight.style.opacity = '1';
       }
 
-      for (let s = 0; s < TOTAL_SHEETS; s++) {
+      for (let s = 0; s < 8; s++) {
         const sheetEl = document.getElementById(`desktop-sheet-${s}`);
         if (!sheetEl) continue;
 
@@ -4038,11 +3849,11 @@
           sheetEl.style.zIndex = 10 + s;
         } else {
           sheetEl.classList.remove('flipped');
-          sheetEl.style.zIndex = 30 - s;
+          sheetEl.style.zIndex = 40 - s;
         }
       }
 
-      for (let p = 1; p <= TOTAL_PAGES; p++) {
+      for (let p = 1; p <= 15; p++) {
         const cardEl = document.getElementById(`mobile-page-${p}`);
         if (!cardEl) continue;
         cardEl.classList.remove('past-page', 'active-page', 'future-page');
@@ -4062,18 +3873,22 @@
       const indicatorEl = document.getElementById('page-indicator-text');
       if (isMobileMode) {
         const pageObj = PAGES_DATA[currentPageNumber - 1];
-        indicatorEl.textContent = `Trang ${currentPageNumber}/${TOTAL_PAGES} • ${pageObj.badge}`;
+        indicatorEl.textContent = `Trang ${currentPageNumber}/15 • ${pageObj.badge}`;
       } else {
         if (flippedCount === 0) {
-          indicatorEl.textContent = `Bìa Trước (Trang 1 / ${TOTAL_PAGES})`;
+          indicatorEl.textContent = `Bìa Trước (Trang 1 / 15)`;
         } else {
           const leftPage = flippedCount * 2;
-          const rightPage = Math.min(TOTAL_PAGES, leftPage + 1);
-          indicatorEl.textContent = `Trang ${leftPage} – ${rightPage} / ${TOTAL_PAGES}`;
+          const rightPage = leftPage + 1;
+          if (rightPage > 15) {
+            indicatorEl.textContent = `Trang ${leftPage} / 15`;
+          } else {
+            indicatorEl.textContent = `Trang ${leftPage} – ${rightPage} / 15`;
+          }
         }
       }
 
-      for (let p = 1; p <= TOTAL_PAGES; p++) {
+      for (let p = 1; p <= 15; p++) {
         const dot = document.getElementById(`nav-dot-${p}`);
         if (!dot) continue;
         let isActive = false;
@@ -4086,68 +3901,151 @@
           }
         }
         dot.className = isActive
-          ? 'w-5 h-2 rounded-full transition-all duration-300 bg-amber-400 shadow-[0_0_8px_#fbbf24]'
-          : 'w-2 h-2 rounded-full transition-all duration-300 bg-white/35 hover:bg-amber-300';
+          ? 'w-4 h-1.5 rounded-full transition-all duration-300 bg-amber-400 shadow-[0_0_8px_#fbbf24]'
+          : 'w-1.5 h-1.5 rounded-full transition-all duration-300 bg-white/35 hover:bg-amber-300';
       }
 
       document.getElementById('btn-prev').disabled = (currentPageNumber <= 1);
-      document.getElementById('btn-next').disabled = isMobileMode
-        ? (currentPageNumber >= TOTAL_PAGES)
-        : (flippedCount >= MAX_DESKTOP_FLIPPED);
-
-      syncPageSpecificAudio(flippedCount);
+      document.getElementById('btn-next').disabled = (currentPageNumber >= 15);
     }
 
     function turnNext() {
       unlockAudioImmediately();
-      if (isMobileMode) {
-        if (currentPageNumber < TOTAL_PAGES) {
-          currentPageNumber++;
-          syncBookVisualState(true);
-        }
-      } else {
-        const flipped = getDesktopFlippedCountFromPage(currentPageNumber);
-        if (flipped < MAX_DESKTOP_FLIPPED) {
-          const nextFlipped = flipped + 1;
-          currentPageNumber = nextFlipped * 2;
-          syncBookVisualState(true);
-        }
+      if (currentPageNumber < 15) {
+        currentPageNumber++;
+        syncBookVisualState(true);
       }
     }
 
     function turnPrev() {
       unlockAudioImmediately();
-      if (isMobileMode) {
-        if (currentPageNumber > 1) {
-          currentPageNumber--;
-          syncBookVisualState(true);
-        }
-      } else {
-        const flipped = getDesktopFlippedCountFromPage(currentPageNumber);
-        if (flipped > 0) {
-          const prevFlipped = flipped - 1;
-          currentPageNumber = prevFlipped === 0 ? 1 : prevFlipped * 2;
-          syncBookVisualState(true);
-        }
+      if (currentPageNumber > 1) {
+        currentPageNumber--;
+        syncBookVisualState(true);
       }
     }
 
     function jumpToPage(targetPage) {
       unlockAudioImmediately();
-      currentPageNumber = Math.max(1, Math.min(TOTAL_PAGES, targetPage));
+      currentPageNumber = Math.max(1, Math.min(15, targetPage));
       syncBookVisualState(true);
     }
 
     function handleDesktopSheetClick(sheetIndex, face, event) {
-      if (event.target.closest('button, input, form, a, video, .zoomable-photo-card')) return;
+      if (event.target.closest('button, input, form, a, .zoomable-photo-card')) return;
       unlockAudioImmediately();
 
       const flipped = getDesktopFlippedCountFromPage(currentPageNumber);
-      if (face === 'front' && sheetIndex === flipped && flipped < MAX_DESKTOP_FLIPPED) {
+      if (face === 'front' && sheetIndex === flipped) {
         turnNext();
       } else if (face === 'back' && sheetIndex === flipped - 1) {
         turnPrev();
       }
+    }
+
+    // Interactive Pull Drawer toggle for Page 5
+    function togglePullDrawer(event) {
+      if (event) event.stopPropagation();
+      const drawer = document.getElementById('thieuhoa-pull-drawer');
+      if (!drawer) return;
+      if (drawer.style.maxHeight && drawer.style.maxHeight !== '0px') {
+        drawer.style.maxHeight = '0px';
+      } else {
+        drawer.style.maxHeight = '320px';
+      }
+    }
+
+    // Photo Zoom Lightbox Modal
+    function openPhotoZoomModal(cardEl, event) {
+      if (event) event.stopPropagation();
+      const img = cardEl.querySelector('img');
+      const caption = cardEl.dataset.caption || cardEl.querySelector('p')?.textContent || "Ảnh kỷ niệm Chi đoàn 12C4";
+      if (!img) return;
+
+      const overlay = document.getElementById('photo-zoom-overlay');
+      const zoomImg = document.getElementById('photo-zoom-img');
+      const zoomCap = document.getElementById('photo-zoom-caption');
+      const zoomCard = document.getElementById('photo-zoom-card');
+
+      zoomImg.src = img.src;
+      zoomCap.textContent = caption;
+
+      overlay.classList.remove('opacity-0', 'invisible');
+      zoomCard.classList.remove('scale-75');
+      zoomCard.classList.add('scale-100');
+    }
+
+    function closePhotoZoomModal() {
+      const overlay = document.getElementById('photo-zoom-overlay');
+      const zoomCard = document.getElementById('photo-zoom-card');
+
+      zoomCard.classList.remove('scale-100');
+      zoomCard.classList.add('scale-75');
+      overlay.classList.add('opacity-0', 'invisible');
+    }
+
+    // Typewriter effect for Trang 15
+    let typewriterTimer = null;
+    function startLoiKetTypewriter() {
+      const box = document.querySelector('.loiket-typewriter-box');
+      if (!box || box.dataset.typed === 'true') return;
+      box.dataset.typed = 'true';
+      box.textContent = '';
+
+      let idx = 0;
+      if (typewriterTimer) clearInterval(typewriterTimer);
+
+      typewriterTimer = setInterval(() => {
+        if (idx < LOI_KET_FULL_TEXT.length) {
+          box.textContent += LOI_KET_FULL_TEXT.charAt(idx);
+          idx++;
+        } else {
+          clearInterval(typewriterTimer);
+        }
+      }, 16);
+    }
+
+    // Wish wall rendering & adding
+    function renderWishesWall() {
+      const walls = document.querySelectorAll('#wishes-wall');
+      const badges = document.querySelectorAll('.wishes-count-badge');
+      badges.forEach(b => b.textContent = `📌 ${SAVED_WISHES.length} giấy nhớ`);
+
+      walls.forEach((wall) => {
+        wall.innerHTML = '';
+        SAVED_WISHES.forEach((wish, idx) => {
+          const note = document.createElement('div');
+          const rot = (idx % 2 === 0) ? -1 : 1.2;
+          note.className = `p-2 rounded-lg ${wish.color} border shadow-xs text-[10.5px] text-[#2c1e16] relative transition-all`;
+          note.style.transform = `rotate(${rot}deg)`;
+          const safeSender = wish.sender.replace(/</g, '&lt;');
+          const senderHtml = safeSender.includes('Thanh Long')
+            ? `<a href="https://fb.com/htl165" target="_blank" rel="noopener noreferrer" class="underline hover:text-rose-700">${safeSender}</a>`
+            : safeSender;
+          note.innerHTML = `
+            <div class="w-2.5 h-2.5 rounded-full bg-rose-500 absolute -top-1.5 left-1/2 -translate-x-1/2 shadow-xs"></div>
+            <p class="font-hand font-medium leading-tight">“${wish.message.replace(/</g, '&lt;')}”</p>
+            <p class="font-hand text-[9px] font-bold text-[#9e2a2b] mt-0.5 text-right">— ${senderHtml}</p>
+          `;
+          wall.appendChild(note);
+        });
+      });
+    }
+
+    function handleAddWish(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const form = event.target;
+      const sender = form.sender.value.trim();
+      const message = form.message.value.trim();
+      const color = form.noteColor.value;
+
+      if (!sender || !message) return;
+
+      SAVED_WISHES.unshift({ sender, message, color });
+      renderWishesWall();
+      form.reset();
+      playTributeChime();
     }
 
     function initTouchAndDragGestures() {
@@ -4159,7 +4057,7 @@
       let isHorizontalSwipe = null;
 
       stage.addEventListener('pointerdown', (e) => {
-        if (e.target.closest('button, input, form, a, video, .zoomable-photo-card')) return;
+        if (e.target.closest('button, input, form, a, .zoomable-photo-card')) return;
         unlockAudioImmediately();
         startX = e.clientX;
         startY = e.clientY;
@@ -4181,7 +4079,7 @@
           currentDeltaX = dx;
           if (isMobileMode) {
             const activeCard = document.getElementById(`mobile-page-${currentPageNumber}`);
-            if (activeCard && dx < 0 && currentPageNumber < TOTAL_PAGES) {
+            if (activeCard && dx < 0 && currentPageNumber < 15) {
               const angle = Math.max(-45, (dx / 260) * 45);
               activeCard.style.transition = 'none';
               activeCard.style.transform = `rotateY(${angle}deg)`;
@@ -4218,10 +4116,6 @@
 
       window.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-        if (e.key === 'Escape' && isZoomModalOpen) {
-          closePhotoZoomModal();
-          return;
-        }
         if (e.key === 'ArrowRight') turnNext();
         if (e.key === 'ArrowLeft') turnPrev();
       });
@@ -4235,38 +4129,21 @@
       });
     }
 
-    // --- GitHub MP3 Audio Controls (Nhạc nền chung chạy 32% ở Trang 8-9 & 22% ở Trang 15) ---
     function unlockAudioImmediately() {
       const audioEl = document.getElementById('bg-audio-element');
       if (audioEl && isMusicPlaying) {
-        const flippedCount = getDesktopFlippedCountFromPage(currentPageNumber);
-        const isOnBuiPhan = isMobileMode
-          ? (currentPageNumber === 8 || currentPageNumber === 9)
-          : (flippedCount === 4);
-        const isOnLoiKet = isMobileMode
-          ? (currentPageNumber === 15)
-          : (flippedCount === 7);
-        audioEl.volume = isOnBuiPhan ? 0.32 : (isOnLoiKet ? 0.22 : 0.85);
         audioEl.play().catch(() => {});
       }
     }
 
     function toggleBackgroundMusic() {
-      const bgAudio = document.getElementById('bg-audio-element');
       isMusicPlaying = !isMusicPlaying;
-      if (bgAudio) {
+      const audioEl = document.getElementById('bg-audio-element');
+      if (audioEl) {
         if (isMusicPlaying) {
-          const flippedCount = getDesktopFlippedCountFromPage(currentPageNumber);
-          const isOnBuiPhan = isMobileMode
-            ? (currentPageNumber === 8 || currentPageNumber === 9)
-            : (flippedCount === 4);
-          const isOnLoiKet = isMobileMode
-            ? (currentPageNumber === 15)
-            : (flippedCount === 7);
-          bgAudio.volume = isOnBuiPhan ? 0.32 : (isOnLoiKet ? 0.22 : 0.85);
-          bgAudio.play().catch(() => {});
+          audioEl.play().catch(() => {});
         } else {
-          bgAudio.pause();
+          audioEl.pause();
         }
       }
       updateMusicButtonUI();
@@ -4362,35 +4239,6 @@
       } catch (e) {}
     }
 
-    function handleAddWish(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const form = event.target;
-      const sender = form.sender.value.trim().replace(/</g, '&lt;');
-      const message = form.message.value.trim().replace(/</g, '&lt;');
-      if (!sender || !message) return;
-
-      const selectedColorInput = form.querySelector('input[name="noteColor"]:checked');
-      const chosenColor = selectedColorInput ? selectedColorInput.value : 'bg-[#fff3b0] border-amber-300';
-      const rotations = ['-1.4deg', '1.2deg', '-0.8deg', '1.5deg'];
-      const pins = ['', 'push-pin-gold', 'push-pin-teal'];
-      const chosenRot = rotations[Math.floor(Math.random() * rotations.length)];
-      const chosenPin = pins[Math.floor(Math.random() * pins.length)];
-
-      // Lưu trực tiếp vào danh sách SAVED_WISHES và tự động điều chỉnh kích thước các giấy nhớ
-      SAVED_WISHES.unshift({
-        sender,
-        message,
-        color: chosenColor,
-        rot: chosenRot,
-        pin: chosenPin
-      });
-
-      renderAndAutoFitWishes();
-      form.reset();
-      playTributeChime();
-    }
-
     function toggleTocModal() {
       const modal = document.getElementById('toc-modal');
       if (modal.classList.contains('opacity-0')) {
@@ -4406,9 +4254,7 @@
 
       const audioEl = document.getElementById('bg-audio-element');
       if (audioEl) {
-        audioEl.play().catch(() => {
-          console.log("Autoplay blocked, waiting for user gesture.");
-        });
+        audioEl.play().catch(() => {});
       }
 
       ['pointerdown', 'touchstart', 'keydown'].forEach((evtName) => {
